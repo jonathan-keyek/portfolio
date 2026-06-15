@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="color-scheme" content="light"/><script>document.documentElement.className+=' js';</script><title>Architecting Workday's AI design system — Jonathan Keyek</title><link rel="stylesheet" href="../style.css"/></head><body>
+<div class="wrap">
+  <a class="cs-back" href="../index.html">← Jonathan Keyek</a>
+  <div class="cs-tag" data-reveal>Systems Design · AI</div>
+  <h1 class="cs-title" data-reveal>Architecting Workday's AI design system</h1>
+  <div class="cs-specs">
+      <div data-reveal><div class="cs-spec-label">Client</div><div class="cs-spec-val">Workday</div></div>
+      <div data-reveal><div class="cs-spec-label">Year</div><div class="cs-spec-val">2025</div></div>
+      <div data-reveal><div class="cs-spec-label">Role</div><div class="cs-spec-val">Principal Architect & Strategy Lead</div></div>
+      <div data-reveal><div class="cs-spec-label">Timeline</div><div class="cs-spec-val">April–August 2025</div></div>
+  </div>
+  <div class="anchor">
+    <div class="anchor-num blue" data-reveal>2,000×</div>
+    <div class="anchor-label" data-reveal>Lower Compute Costs</div>
+    <div class="anchor-sub" data-reveal>By making Embedded AI the default standard — and giving every team the logic to get there themselves.</div>
+  </div>
+  <section><h2 data-reveal>TL;DR</h2><div class="tldr">
+    <div class="tldr-row" data-reveal><div class="tldr-label">Problem</div><div class="tldr-title">The Innovation Gridlock</div><div class="tldr-body">25+ teams were each inventing their own AI patterns. No shared language, no governance, no way to tell a trustworthy interaction from a risky one. Every team rebuilt the same wheel, and compute costs ballooned with the most expensive pattern as the default.</div></div>
+    <div class="tldr-row" data-reveal><div class="tldr-label">Solution</div><div class="tldr-title">A 5-Pattern Taxonomy</div><div class="tldr-body">I defined five AI interaction patterns — from fully embedded to fully agentic — each with clear governance, trust requirements, and a cost profile. Teams could now place any feature on the map and know exactly how to build it.</div></div>
+    <div class="tldr-row" data-reveal><div class="tldr-label">Outcome</div><div class="tldr-title">One Language, 25+ Teams</div><div class="tldr-body">The taxonomy became the shared standard. Embedded AI as the default drove a 2,000× reduction in compute cost, and the work secured a company-level Strategic Growth Objective.</div></div>
+  </div></section>
+  <section><h2 data-reveal>Key Features</h2>
+    <div class="feature" data-reveal><h3>The Pattern Map</h3><p>Five patterns, one axis: how much autonomy the system has. Each pattern carries its own trust contract and cost profile, so a team picks the cheapest pattern that solves the problem rather than defaulting to the most expensive.</p><div class="imgph">The 5-pattern taxonomy diagram, embedded → agentic</div></div>
+    <div class="feature" data-reveal><h3>The Glass Box</h3><p>Trust in AI comes from visibility. The Glass Box pattern makes the system's reasoning legible at the moment of action — what it's doing, why, and how to intervene. It became Workday's governance standard for agentic AI.</p><div class="imgph">Glass Box interaction: reasoning surfaced inline with intervention controls</div></div>
+    <div class="feature" data-reveal><h3>Governance That Travels</h3><p>The system isn't a static doc — it's decision logic teams run themselves. Each pattern ships with the criteria to know when it applies, so governance scales without a central bottleneck.</p><div class="imgph">Governance decision tree teams use to self-classify features</div></div>
+  </section>
+  <section><h2 data-reveal>Deep Dive</h2><div class="deepdive">
+    <details data-reveal><summary>The Cost Argument<span class="dd-sub">How a design decision became a 2,000× compute story</span></summary><div class="dd-body"><h4>The default was the problem</h4><p>Most teams reached for the most capable, most expensive pattern by reflex. The taxonomy reframed the choice: start from the cheapest pattern that meets the trust bar, escalate only when the problem demands it.</p><h4>Why it stuck</h4><p>Engineers adopted it because it made their lives easier, not because leadership mandated it. The logic was self-serve.</p></div></details>
+    <details data-reveal><summary>Reflection<span class="dd-sub">Scaling yourself through a system</span></summary><div class="dd-body"><h4>What worked</h4><p>Shipping decision logic instead of a style guide. Teams didn't need me in the room to make the right call.</p><h4>What I'd refine</h4><p>Earlier socialization with engineering leadership — the patterns were sound before they were political, and the political work lagged.</p></div></details>
+  </div></section>
+  <section><h2 data-reveal>Credits</h2><div class="credits">
+    <div class="credit-row" data-reveal><div class="credit-label">Architecture & Strategy</div><div class="credit-name">Jonathan Keyek</div></div>
+    <div class="credit-row" data-reveal><div class="credit-label">Quoted</div><div class="credit-name">Ali Fuller, SVP Product Development</div></div>
+    <div class="credit-row" data-reveal><div class="credit-label">Org</div><div class="credit-name">Workday UX Studio</div></div>
+  </div></section>
+  <footer data-reveal>Back to <a href="../index.html">keyek.design</a></footer>
+</div>
+<script>
+(function(){var els=[].slice.call(document.querySelectorAll('[data-reveal]'));var STAGGER=60;els.forEach(function(el,i){el.style.animationDelay=(i*STAGGER)+'ms';el.classList.add('reveal');});})();
+</script>
+</body></html>
