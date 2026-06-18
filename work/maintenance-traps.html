@@ -1,45 +1,73 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="color-scheme" content="light"/><script>document.documentElement.className+=' js';</script><title>Resolving Workday Maintenance Traps with Agentic Experiences — Jonathan Keyek</title><link rel="stylesheet" href="../style.css"/></head><body>
+<meta name="color-scheme" content="light"/><script>document.documentElement.className+=' js';</script><title>Resolving Workday's Maintenance Trap with Agentic Experiences — Jonathan Keyek</title><link rel="stylesheet" href="../style.css"/></head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 <button id="pause-toggle" data-tooltip="Pause animations" aria-label="Pause animations" aria-pressed="false"><svg class="icon-pause" width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="3.5" height="12" rx="1"/><rect x="5.5" y="0" width="3.5" height="12" rx="1"/></svg><svg class="icon-play" width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M0 0 L10 6 L0 12 Z"/></svg></button>
 <button id="theme-toggle" data-tooltip="Switch to dark mode" aria-label="Switch to dark mode" aria-pressed="false"></button>
 <div class="wrap" id="main-content">
-  <a class="cs-back" href="../index.html">← Jonathan Keyek</a>
+  <a class="cs-back" href="../index.html">← Back Home</a>
   <div class="cs-tag" data-reveal>Agentic Experience · AI Governance</div>
-  <h1 class="cs-title" data-reveal>Resolving Workday Maintenance Traps with Agentic Experiences</h1>
+  <h1 class="cs-title" data-reveal>Resolving Workday's Maintenance Trap with Agentic Experiences</h1>
   <div class="cs-specs">
       <div data-reveal><div class="cs-spec-label">Client</div><div class="cs-spec-val">Workday</div></div>
       <div data-reveal><div class="cs-spec-label">Year</div><div class="cs-spec-val">2025</div></div>
       <div data-reveal><div class="cs-spec-label">Role</div><div class="cs-spec-val">Principal Product Designer & Strategy Lead</div></div>
-      <div data-reveal><div class="cs-spec-label">Outcome</div><div class="cs-spec-val">6 Engineering Teams Funded</div></div>
+      <div data-reveal><div class="cs-spec-label">Outcome</div><div class="cs-spec-val">6 engineering teams funded → now shipping as product</div></div>
   </div>
-  <img class="cs-hero" src="../media/Admin-CaseStudyThubnail.png" alt="" aria-hidden="true" data-reveal>
+  <div class="cs-hero-wrap case-thumb-admin" data-reveal>
+    <div class="case-thumb-blob-wrap" aria-hidden="true"><div class="case-thumb-blob"></div></div>
+    <img class="case-thumb-img" src="../media/Admin-CaseStudyThubnail.png" alt="" aria-hidden="true">
+  </div>
   <div class="anchor">
-    <div class="anchor-num red" data-reveal>45 min</div>
+    <div class="anchor-num admin" data-reveal>45 min</div>
     <div class="anchor-label" data-reveal>To Break a C-Suite Deadlock</div>
-    <div class="anchor-sub" data-reveal>A single agentic prototype turned a stalled governance debate into funding for six engineering teams.</div>
+    <div class="anchor-sub" data-reveal>One agentic prototype turned a stalled governance debate into a funded two-year roadmap — and a shipping product.</div>
   </div>
   <section><h2 data-reveal>TL;DR</h2><div class="tldr">
-    <div class="tldr-row" data-reveal><div class="tldr-label">Problem</div><div class="tldr-title">The Maintenance Trap</div><div class="tldr-body">Administrators were buried in repetitive configuration and upkeep work — high-stakes, low-visibility tasks where one wrong move ripples across an org. Leadership was deadlocked on whether AI could be trusted to touch it at all.</div></div>
-    <div class="tldr-row" data-reveal><div class="tldr-label">Solution</div><div class="tldr-title">Agentic, with a Glass Box</div><div class="tldr-body">I designed agentic experiences that take on maintenance work while keeping the administrator in command — every action shown, explained, and reversible through the Glass Box pattern that makes the agent's reasoning legible at the moment it acts.</div></div>
-    <div class="tldr-row" data-reveal><div class="tldr-label">Outcome</div><div class="tldr-title">From Deadlock to Mandate</div><div class="tldr-body">A 45-minute prototype walkthrough broke the C-suite stalemate, funded six engineering teams, and made Glass Box the company's governance standard for agentic AI.</div></div>
+    <div class="tldr-row" data-reveal><div class="tldr-label">Problem</div><div class="tldr-title">The Maintenance Trap</div><div class="tldr-body">Workday was losing deals to "too expensive," and the fix on the table was to turn more features on by default. Wrong diagnosis. Admins weren't refusing features — they were already drowning in maintenance. Turning more on was pouring water on a drowning person.</div></div>
+    <div class="tldr-row" data-reveal><div class="tldr-label">Solution</div><div class="tldr-title">Agentic, with a Glass Box</div><div class="tldr-body">Agents that take on the maintenance while keeping the admin in command. Every action shown, explained, and reversible — the Glass Box pattern makes the agent's reasoning legible the moment it acts.</div></div>
+    <div class="tldr-row" data-reveal><div class="tldr-label">Outcome</div><div class="tldr-title">From Deadlock to Product</div><div class="tldr-body">A 45-minute prototype walkthrough broke the stalemate, funded six engineering teams, and made Glass Box the company's governance standard. The vision is now shipping as Workday's Deployment Agent.</div></div>
+    <div class="tldr-row" data-reveal><div class="tldr-label">Process</div><div class="tldr-title">What I Actually Did</div><div class="tldr-body"><p><strong>Synthesis in FigJam.</strong> Pulled 51 existing research reports and 17 SME sessions into FigJam — affinity-mapped the findings until the Maintenance Trap framing fell out of the data. The diagnosis came from clustering what was already there, not from a fresh research budget.</p><p><strong>Planning and flows in Figma.</strong> Mapped the admin's reality, the agentic interaction patterns, and the Glass Box approval flow in Figma before any code. This is where supervised autonomy went from a concept to a concrete sequence of states.</p><p><strong>Prototyping in Lovable and Claude Code.</strong> A static mock can't sell an agent that reasons, proposes, and waits — so I built a live-coded, non-deterministic prototype in Lovable and Claude Code. Real interaction, real reasoning surfaced, real undo. The thing leaders touched in the room was running code, not a deck.</p><p><strong>Communicating in Loom.</strong> Kept a globally distributed team aligned async — design in Hawaii, engineering in San Francisco, research in Dublin — with Loom walkthroughs of each prototype iteration. Decisions moved across time zones without waiting on a meeting.</p><p><strong>Validating at Workday Rising EMEA.</strong> Took the live prototype to the floor — laptops for hands-on interaction, structured 45-minute Braindates, booth intercepts. Targeted solo admins without a support bench specifically. That's where the language gap surfaced and every label got rewritten from database-speak ("Business Process Definition") into plain human terms ("3 hiring workflows need attention before your next release").</p></div></div>
   </div></section>
   <section><h2 data-reveal>Key Features</h2>
-    <div class="feature" data-reveal><h3>The Glass Box</h3><p>Trust comes from visibility. Before the agent changes anything, it surfaces what it intends to do, why, and how to stop or undo it — turning an opaque automation into a legible, accountable action.</p><div class="imgph">Glass Box — agent intent surfaced with intervention controls</div></div>
-    <div class="feature" data-reveal><h3>Reversible by Design</h3><p>Every agentic action carries a clear path back. Administrators delegate the tedium without surrendering control, because nothing the agent does is a one-way door.</p><div class="imgph">Reversible action flow — delegate without losing control</div></div>
+    <div class="feature" data-reveal><h3>The Glass Box</h3><p>Trust comes from visibility. Before the agent changes anything, it surfaces what it intends to do, why, and how to stop or undo it — turning opaque automation into a legible, accountable action.</p><div class="imgph">Glass Box — agent intent surfaced with intervention controls</div></div>
+    <div class="feature" data-reveal><h3>Reversible by Design</h3><p>Every agentic action carries a clear path back. Admins delegate the tedium without surrendering control, because nothing the agent does is a one-way door.</p><div class="imgph">Reversible action flow — delegate without losing control</div></div>
+    <div class="feature" data-reveal><h3>The Impact Analyzer</h3><p>Before any change executes, it simulates the downstream consequences and shows you what would break. It turns a fear-based gamble into a calculated decision.</p><div class="imgph">Impact Analyzer — simulated consequences before execution</div></div>
     <div class="feature" data-reveal><h3>The Funding Prototype</h3><p>The argument wasn't a deck — it was a working experience. Leaders touched the agent resolving a real maintenance trap, and the trust question answered itself.</p><div class="imgph">The prototype that broke the C-suite deadlock</div></div>
+  </section>
+  <section><h2 data-reveal>Key Metrics</h2>
+    <div class="metrics">
+      <div class="metric-item" data-reveal>
+        <div class="anchor-num admin">↓ 90%</div>
+        <div class="anchor-label">Maintenance time</div>
+        <div class="anchor-sub">Eliminated ~16 admin hours/week of repetitive upkeep.</div>
+      </div>
+      <div class="metric-item" data-reveal>
+        <div class="anchor-num admin">↓ 75%</div>
+        <div class="anchor-label">Configuration time</div>
+        <div class="anchor-sub">Impact analysis that took 3–5 hours now completes in minutes.</div>
+      </div>
+      <div class="metric-item" data-reveal>
+        <div class="anchor-num admin">↑ 4×</div>
+        <div class="anchor-label">Value realization</div>
+        <div class="anchor-sub">Admins shifted from reactive maintenance to strategic work, with receipts.</div>
+      </div>
+    </div>
+    <p class="metric-note" data-reveal>Measured against validated customer benchmarks, then pressure-tested against prototype completion times in moderated sessions at Workday Rising EMEA.</p>
   </section>
   <section><h2 data-reveal>Deep Dive</h2><div class="deepdive">
     <details data-reveal><summary>Trust as the Real Deliverable<span class="dd-sub">Why governance, not automation, was the hard part</span></summary><div class="dd-body"><h4>The blocker was trust, not capability</h4><p>The technology could automate maintenance long before leadership would let it. The design problem was making the agent's behavior trustworthy enough to delegate to.</p><h4>Legibility unlocked the budget</h4><p>Once leaders could see exactly what the agent would do and undo, the risk calculus flipped — and the funding followed.</p></div></details>
-    <details data-reveal><summary>Reflection<span class="dd-sub">Designing the argument, not just the feature</span></summary><div class="dd-body"><h4>What worked</h4><p>Putting a live prototype in decision-makers' hands beat any amount of slideware. The experience carried the argument.</p><h4>What I'd refine</h4><p>Bringing the Glass Box framing to leadership earlier — the trust story was the unlock, and it deserved the spotlight from day one.</p></div></details>
+    <details data-reveal><summary>What Didn't Work<span class="dd-sub">The directions that didn't survive feasibility</span></summary><div class="dd-body"><h4>Goal-Based Configuration died on the table</h4><p>The seductive idea: let admins state a business outcome — "reduce IT tickets 20%" — and have the agent configure the system to get there. It collapsed under technical reality. The gap between that intent and the specific configuration objects required to achieve it was too wide to bridge without the AI guessing. Enterprise software doesn't forgive hallucination. Killing it early saved us from shipping a feature that would've eroded the exact trust we were trying to build.</p><h4>The filtered view was the wrong kind of simple</h4><p>Our first instinct for solo admins was to hide the advanced controls — a stripped-down enterprise tool. The POC phase proved that wrong. They don't need less Workday; they need one built for their reality: one person, high stakes, no support bench. We stopped subtracting and started designing for the actual user. That pivot is what made the agentic direction the right one.</p><h4>The pattern</h4><p>Both were good ideas that didn't survive contact with feasibility. Cutting them wasn't a setback — it was the work. The version that got funded was sharper precisely because these two didn't make it in.</p></div></details>
+    <details data-reveal><summary>Reflection<span class="dd-sub">Designing the argument, not just the feature</span></summary><div class="dd-body"><h4>What worked</h4><p>Putting a live prototype in decision-makers' hands beat any amount of slideware. The experience carried the argument.</p><h4>What I'd refine</h4><p>The vision touched Platform, Tech Stack, Sales, Brand, and Design at once — breadth sold it, but created downstream scope that was hard to prioritize. Next time: find the 5–6 highest-leverage levers early and go deep. And bring the Glass Box trust framing to leadership from day one — it was the actual unlock, and it deserved the spotlight sooner.</p></div></details>
+    <details data-reveal><summary>The Vision, Shipping<span class="dd-sub">From funded roadmap to real product</span></summary><div class="dd-body"><h4>Strategy → prototype → mandate → shipped</h4><p>The work didn't stop at a funded roadmap. The agentic vision is now a real product: Workday's Deployment Agent, built to make the maintenance-trap relief an admin can actually buy.</p></div></details>
   </div></section>
   <section><h2 data-reveal>Credits</h2><div class="credits">
     <div class="credit-row" data-reveal><div class="credit-label">Design & Strategy</div><div class="credit-name">Jonathan Keyek</div></div>
-    <div class="credit-row" data-reveal><div class="credit-label">Outcome</div><div class="credit-name">6 engineering teams funded</div></div>
-    <div class="credit-row" data-reveal><div class="credit-label">Org</div><div class="credit-name">Workday UX Studio</div></div>
+    <div class="credit-row" data-reveal><div class="credit-label">Research</div><div class="credit-name">Áine Hart</div></div>
+    <div class="credit-row" data-reveal><div class="credit-label">Engineering</div><div class="credit-name">Rob McEvoy</div></div>
+    <div class="credit-row" data-reveal><div class="credit-label">Product</div><div class="credit-name">Colm Lennon</div></div>
   </div></section>
-  <footer data-reveal>Back to <a href="../index.html">keyek.design</a></footer>
+  <footer data-reveal><a class="cs-back" href="../index.html">← Back Home</a></footer>
 </div>
 <script src="../shared.js"></script>
 </body></html>

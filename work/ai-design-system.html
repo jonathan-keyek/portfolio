@@ -1,45 +1,83 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="color-scheme" content="light"/><script>document.documentElement.className+=' js';</script><title>Architecting Workday's AI design system — Jonathan Keyek</title><link rel="stylesheet" href="../style.css"/></head><body>
+<meta name="color-scheme" content="light"/><script>document.documentElement.className+=' js';</script><title>Architecting Workday's AI Design System — Jonathan Keyek</title><link rel="stylesheet" href="../style.css"/></head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 <button id="pause-toggle" data-tooltip="Pause animations" aria-label="Pause animations" aria-pressed="false"><svg class="icon-pause" width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="3.5" height="12" rx="1"/><rect x="5.5" y="0" width="3.5" height="12" rx="1"/></svg><svg class="icon-play" width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M0 0 L10 6 L0 12 Z"/></svg></button>
 <button id="theme-toggle" data-tooltip="Switch to dark mode" aria-label="Switch to dark mode" aria-pressed="false"></button>
 <div class="wrap" id="main-content">
-  <a class="cs-back" href="../index.html">← Jonathan Keyek</a>
-  <div class="cs-tag" data-reveal>Systems Design · AI</div>
-  <h1 class="cs-title" data-reveal>Architecting Workday's AI design system</h1>
+  <a class="cs-back" href="../index.html">← Back Home</a>
+  <div class="cs-tag" data-reveal>Systems Design · AI Governance</div>
+  <h1 class="cs-title" data-reveal>Architecting Workday's AI Design System</h1>
   <div class="cs-specs">
-      <div data-reveal><div class="cs-spec-label">Client</div><div class="cs-spec-val">Workday</div></div>
-      <div data-reveal><div class="cs-spec-label">Year</div><div class="cs-spec-val">2025</div></div>
-      <div data-reveal><div class="cs-spec-label">Role</div><div class="cs-spec-val">Principal Architect & Strategy Lead</div></div>
-      <div data-reveal><div class="cs-spec-label">Timeline</div><div class="cs-spec-val">April–August 2025</div></div>
+    <div data-reveal><div class="cs-spec-label">Client</div><div class="cs-spec-val">Workday</div></div>
+    <div data-reveal><div class="cs-spec-label">Year</div><div class="cs-spec-val">2025</div></div>
+    <div data-reveal><div class="cs-spec-label">Role</div><div class="cs-spec-val">Principal Architect & Strategy Lead</div></div>
+    <div data-reveal><div class="cs-spec-label">Outcome</div><div class="cs-spec-val">25+ teams aligned → foundation of Illuminate</div></div>
   </div>
-  <img class="cs-hero" src="../media/AIDesignSystem-CaseStudyThubnail.png" alt="" aria-hidden="true" data-reveal>
+  <div class="cs-hero-wrap case-thumb-design" data-reveal>
+    <div class="case-thumb-blob-wrap" aria-hidden="true"><div class="case-thumb-blob"></div></div>
+    <img class="case-thumb-img" src="../media/AIDesignSystem-CaseStudyThubnail.png" alt="" aria-hidden="true">
+  </div>
   <div class="anchor">
-    <div class="anchor-num blue" data-reveal>2,000×</div>
+    <div class="anchor-num design" data-reveal>2,000×</div>
     <div class="anchor-label" data-reveal>Lower Compute Costs</div>
-    <div class="anchor-sub" data-reveal>By making Embedded AI the default standard — and giving every team the logic to get there themselves.</div>
+    <div class="anchor-sub" data-reveal>By making Embedded AI the default — and giving every team the logic to get there themselves.</div>
   </div>
   <section><h2 data-reveal>TL;DR</h2><div class="tldr">
-    <div class="tldr-row" data-reveal><div class="tldr-label">Problem</div><div class="tldr-title">The Innovation Gridlock</div><div class="tldr-body">25+ teams were each inventing their own AI patterns. No shared language, no governance, no way to tell a trustworthy interaction from a risky one. Every team rebuilt the same wheel, and compute costs ballooned with the most expensive pattern as the default.</div></div>
-    <div class="tldr-row" data-reveal><div class="tldr-label">Solution</div><div class="tldr-title">A 5-Pattern Taxonomy</div><div class="tldr-body">I defined five AI interaction patterns — from fully embedded to fully agentic — each with clear governance, trust requirements, and a cost profile. Teams could now place any feature on the map and know exactly how to build it.</div></div>
-    <div class="tldr-row" data-reveal><div class="tldr-label">Outcome</div><div class="tldr-title">One Language, 25+ Teams</div><div class="tldr-body">The taxonomy became the shared standard. Embedded AI as the default drove a 2,000× reduction in compute cost, and the work secured a company-level Strategic Growth Objective.</div></div>
+    <div class="tldr-row" data-reveal><div class="tldr-label">Problem</div><div class="tldr-title">The Innovation Gridlock</div><div class="tldr-body">25+ product teams were all building AI independently, and a wave of acquisitions (Sana, Flowise, Pipedream, Evisort, Paradox) made it worse — each with their own stacks and patterns. Everyone had the same chatbot idea. Every idea triggered a review. Every review triggered a debate. The org wasn't slow because people were bad at their jobs. It was slow because there were no shared rules.</div></div>
+    <div class="tldr-row" data-reveal><div class="tldr-label">Solution</div><div class="tldr-title">The Logic Engine</div><div class="tldr-body">Instead of policing teams, I gave them better rules. A finite taxonomy of five pre-validated AI interaction patterns — from Embedded Content to Full Screen Chat — backed by a self-grading Decision Tree that lets PMs route themselves to the right pattern without booking a review. Governance through architecture, not gatekeeping.</div></div>
+    <div class="tldr-row" data-reveal><div class="tldr-label">Outcome</div><div class="tldr-title">Adopted, Not Mandated</div><div class="tldr-body">Review cycles collapsed from weeks to a single conversation. 25+ teams adopted the system voluntarily — because it was the fastest path forward. Making Embedded the default built a 2,000× compute advantage into every product decision. The work became the foundation of Workday's Illuminate design system and a company-level FY27 Strategic Growth Objective.</div></div>
+    <div class="tldr-row" data-reveal><div class="tldr-label">Process</div><div class="tldr-title">What I Actually Did</div><div class="tldr-body">Audited every AI surface in Figma to find the five patterns hiding in the chaos. Built the self-grading Decision Tree in FigJam, then rewrote it with non-designers until it read like a conversation, not a quiz. Mapped the cost spectrum as a business argument, then rolled the whole system out through live "AI Design Digest" workshops — where real teams routing real questions was the validation.</div></div>
   </div></section>
   <section><h2 data-reveal>Key Features</h2>
-    <div class="feature" data-reveal><h3>The Pattern Map</h3><p>Five patterns, one axis: how much autonomy the system has. Each pattern carries its own trust contract and cost profile, so a team picks the cheapest pattern that solves the problem rather than defaulting to the most expensive.</p><div class="imgph">The 5-pattern taxonomy diagram, embedded → agentic</div></div>
-    <div class="feature" data-reveal><h3>The Glass Box</h3><p>Trust in AI comes from visibility. The Glass Box pattern makes the system's reasoning legible at the moment of action — what it's doing, why, and how to intervene. It became Workday's governance standard for agentic AI.</p><div class="imgph">Glass Box interaction: reasoning surfaced inline with intervention controls</div></div>
-    <div class="feature" data-reveal><h3>Governance That Travels</h3><p>The system isn't a static doc — it's decision logic teams run themselves. Each pattern ships with the criteria to know when it applies, so governance scales without a central bottleneck.</p><div class="imgph">Governance decision tree teams use to self-classify features</div></div>
+    <div class="feature" data-reveal><h3>The Decision Tree</h3><p>Design logic encoded as a self-grading flowchart. One question — "Will the user get a better result by asking in their own words?" — eliminates half of all chatbot requests. Teams route themselves in under 60 seconds. No meeting required.</p><div class="imgph">Decision Tree — self-grading flowchart for AI pattern routing</div></div>
+    <div class="feature" data-reveal><h3>The AI Landscape</h3><p>Teams defaulted to Full Screen Chat because nobody had defined when not to. I mapped every valid pattern onto a cost spectrum — from 1× (Embedded) to 2,000–10,000× (Full Screen Chat) — so teams could see the financial stakes before a line of code.</p><div class="imgph">AI Landscape — five patterns mapped onto a cost spectrum</div></div>
+    <div class="feature" data-reveal><h3>Embedded Content</h3><p>The lowest-cost, highest-value default. System-generated insights that appear inside the workflow — no prompt, no panel. The AI becomes part of the page, not a layer on top of it.</p><div class="imgph">Embedded Content — AI insight inline, no prompt required</div></div>
+    <div class="feature" data-reveal><h3>Generated Content</h3><p>A collaborative space for drafting. The AI handles the blank-page problem, then hands control back to refine, insert, or retry. Sources are cited. The human stays in charge.</p><div class="imgph">Generated Content — AI drafts, human refines</div></div>
+    <div class="feature" data-reveal><h3>Chat, Used Sparingly</h3><p>Reserved for when nothing else fits. Partial Panel for contextual help, Full Screen for complex multi-turn work. One rule: use the smallest surface that gets the job done.</p><div class="imgph">Chat patterns — Partial Panel and Full Screen, when nothing else fits</div></div>
+  </section>
+  <section><h2 data-reveal>Key Metrics</h2>
+    <div class="metrics">
+      <div class="metric-item" data-reveal>
+        <div class="anchor-num design">↓ 2,000×</div>
+        <div class="anchor-label">Compute cost</div>
+        <div class="anchor-sub">Driving Embedded over custom conversational builds cut AI inference cost up to 2,000–10,000× per interaction.</div>
+      </div>
+      <div class="metric-item" data-reveal>
+        <div class="anchor-num design">25+</div>
+        <div class="anchor-label">Teams aligned</div>
+        <div class="anchor-sub">From Skills Cloud and Career Hub to Expenses and the Recruiter Agent, adopted voluntarily.</div>
+      </div>
+      <div class="metric-item" data-reveal>
+        <div class="anchor-num design">↓ 90%</div>
+        <div class="anchor-label">Review-cycle time</div>
+        <div class="anchor-sub">Multi-week reviews collapsed to a single facilitated session, or none at all via the Decision Tree.</div>
+      </div>
+    </div>
+    <p class="metric-note" data-reveal>Compute figures based on technical analysis of AI inference patterns against engineering constraints. Base unit (1×) ≈ the cost of a simple generation (~$0.0001).</p>
+  </section>
+  <section><h2 data-reveal>What I Actually Did</h2>
+    <div class="feature" data-reveal><h3>Pattern audit in Figma</h3><p>Mapped every AI surface across Workday's product — not to critique it, but to find the patterns hiding in the chaos. Five distinct interaction types emerged from the mess.</p></div>
+    <div class="feature" data-reveal><h3>Taxonomy and Decision Tree in FigJam</h3><p>Built the logic as a self-grading flowchart, then rebuilt it. Early versions tried to cover every edge case — too academic, too easy to get lost in. Tested the questions with non-designers, watched where they got confused, and rewrote until the tree felt like a conversation, not a quiz you could fail.</p></div>
+    <div class="feature" data-reveal><h3>The AI Landscape as a business argument</h3><p>Mapped all five patterns onto a cost spectrum in Figma — 1× to 2,000–10,000×. This wasn't a design artifact; it was the financial case that gave Design a seat in conversations that used to happen without us.</p></div>
+    <div class="feature" data-reveal><h3>Rollout through live workshops</h3><p>Shipped the system via "AI Design Digest" sessions — live facilitated workshops where teams brought real feature questions and routed them through the tree in real time. If a team got stuck or reached the wrong answer, I'd found a flaw. Adoption was the validation.</p></div>
   </section>
   <section><h2 data-reveal>Deep Dive</h2><div class="deepdive">
-    <details data-reveal><summary>The Cost Argument<span class="dd-sub">How a design decision became a 2,000× compute story</span></summary><div class="dd-body"><h4>The default was the problem</h4><p>Most teams reached for the most capable, most expensive pattern by reflex. The taxonomy reframed the choice: start from the cheapest pattern that meets the trust bar, escalate only when the problem demands it.</p><h4>Why it stuck</h4><p>Engineers adopted it because it made their lives easier, not because leadership mandated it. The logic was self-serve.</p></div></details>
-    <details data-reveal><summary>Reflection<span class="dd-sub">Scaling yourself through a system</span></summary><div class="dd-body"><h4>What worked</h4><p>Shipping decision logic instead of a style guide. Teams didn't need me in the room to make the right call.</p><h4>What I'd refine</h4><p>Earlier socialization with engineering leadership — the patterns were sound before they were political, and the political work lagged.</p></div></details>
+    <details data-reveal><summary>Governance Without Gatekeeping<span class="dd-sub">Why a menu beat a review queue</span></summary><div class="dd-body"><h4>The bottleneck was rules, not effort</h4><p>Teams weren't slow because they lacked skill — they were slow because every AI decision was a fresh debate with no shared standard. The fix wasn't more oversight. It was a finite set of pre-validated choices anyone could navigate alone.</p><h4>Self-serve scaled the thinking</h4><p>Removing myself as the gatekeeper was uncomfortable, but a framework that needs me in every room isn't a framework — it's a bottleneck with better documentation. The Decision Tree scaled the logic without scaling headcount.</p></div></details>
+    <details data-reveal><summary>What Didn't Work<span class="dd-sub">The directions that didn't survive contact with real teams</span></summary><div class="dd-body"><h4>Comprehensive coverage collapsed under its own weight</h4><p>The first Decision Tree tried to address every edge case. It became exhaustive and unusable. A decision framework has to be fast, not complete — so we cut end states until it was quick enough to actually use.</p><h4>Neutral framing didn't change behavior</h4><p>Early versions presented all five patterns as equally valid. Honest, but ineffective — PMs kept defaulting to chat. Making Embedded the explicit default, backed by the cost spectrum, was the move that actually shifted adoption. Reframing "Embedded" from a downgrade into the smart, high-value call is what made the savings real.</p></div></details>
+    <details data-reveal><summary>Reflection<span class="dd-sub">Scaling design without scaling headcount</span></summary><div class="dd-body"><h4>What worked</h4><p>Pairing the design case with a cost argument changed everything. Executives don't fund design frameworks — they fund solutions to expensive problems. The moment teams could see Full Screen Chat cost 2,000–10,000× more than Embedded, governance became a financial conversation, and Design had the receipts.</p><h4>What I'd refine</h4><p>Ship a rough version earlier. We iterated in relative isolation before releasing to teams — but the messiness of the first live sessions taught us more than the internal debate ever did. Watching real teams break a rougher version would have simplified it months sooner.</p></div></details>
+    <details data-reveal><summary>Built to Outlast Me<span class="dd-sub">The real test of a framework</span></summary><div class="dd-body"><h4>The measure of a framework</h4><p>Kimberly Berls, Sinéad Davis Cochrane, Ramona Thompson, Nicole Inagawa, and the AI design team didn't just contribute to this system — they went on to use it, teach it, and build with it independently. That's the measure of a framework: not whether it holds up in a presentation, but whether the people closest to the work trust it enough to run with it on their own. This became the foundation of Workday's Illuminate design system and a company-level FY27 Strategic Growth Objective.</p></div></details>
   </div></section>
+  <div class="quote" data-reveal>
+    <p>"This is what Workday's AI Experience truly needs to be. This is how we will deliver value to every single customer, and more."</p>
+    <p class="attr">— Ali Fuller, SVP of Product Development, Workday</p>
+  </div>
   <section><h2 data-reveal>Credits</h2><div class="credits">
-    <div class="credit-row" data-reveal><div class="credit-label">Architecture & Strategy</div><div class="credit-name">Jonathan Keyek</div></div>
-    <div class="credit-row" data-reveal><div class="credit-label">Quoted</div><div class="credit-name">Ali Fuller, SVP Product Development</div></div>
-    <div class="credit-row" data-reveal><div class="credit-label">Org</div><div class="credit-name">Workday UX Studio</div></div>
+    <div class="credit-row" data-reveal><div class="credit-label">Strategy & Architecture</div><div class="credit-name">Jonathan Keyek</div></div>
+    <div class="credit-row" data-reveal><div class="credit-label">Decision Framework</div><div class="credit-name">Kimberly Berls · Sinéad Davis Cochrane · Ramona Thompson</div></div>
+    <div class="credit-row" data-reveal><div class="credit-label">AI Design</div><div class="credit-name">Nicole Inagawa · Jan Decastro · Mia Donnell · Owen Derby</div></div>
   </div></section>
-  <footer data-reveal>Back to <a href="../index.html">keyek.design</a></footer>
+  <footer data-reveal><a class="cs-back" href="../index.html">← Back Home</a></footer>
 </div>
 <script src="../shared.js"></script>
 </body></html>
