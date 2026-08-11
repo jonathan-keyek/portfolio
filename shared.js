@@ -68,24 +68,32 @@
     });
   });
 
-  // Pin each .wip-thumb's height to its sibling .wip-content's rendered height,
-  // so the image box always hugs the text block exactly (width follows via aspect-ratio).
-  // Setting the thumb's height changes its width (via aspect-ratio), which changes
-  // how much space is left for the text column, which can reflow the text and change
-  // its height in turn — so this watches .wip-content itself and resyncs whenever its
-  // size actually changes, instead of guessing how many passes convergence needs.
+  // Grow .wip-thumb beyond its default max-width when the text column needs
+  // more vertical room than the image naturally provides, so there's always
+  // at least the CSS-defined gap between the icon row and the body text.
+  // (aspect-ratio: 3414 / 2062, box-sizing: content-box, 12px padding each side)
   document.querySelectorAll('.wip-item').forEach(function (item) {
     var thumb = item.querySelector('.wip-thumb');
     var content = item.querySelector('.wip-content');
     if (!thumb || !content || typeof ResizeObserver === 'undefined') return;
-    var lastHeight = -1;
-    var ro = new ResizeObserver(function (entries) {
-      var h = entries[0].contentRect.height;
-      if (Math.abs(h - lastHeight) < 0.5) return;
-      lastHeight = h;
-      var cs = getComputedStyle(thumb);
-      var vPadding = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
-      thumb.style.height = Math.max(0, content.offsetHeight - vPadding) + 'px';
+    if (window.matchMedia('(max-width: 600px)').matches) return; // mobile stacks; no growth needed
+    var RATIO = 3414 / 2062;
+    var PADDING = 24; // 12px top + 12px bottom (content-box)
+    var lastContentH = -1;
+    var ro = new ResizeObserver(function () {
+      var contentH = content.offsetHeight;
+      if (Math.abs(contentH - lastContentH) < 0.5) return;
+      lastContentH = contentH;
+      // Always measure against the CSS-default (natural) size, not our own
+      // prior override, so this can't feed back on itself and oscillate.
+      thumb.style.width = '';
+      thumb.style.maxWidth = '';
+      var naturalH = thumb.getBoundingClientRect().height;
+      if (contentH > naturalH) {
+        var neededContentBoxW = (contentH - PADDING) * RATIO;
+        thumb.style.width = neededContentBoxW + 'px';
+        thumb.style.maxWidth = 'none';
+      }
     });
     ro.observe(content);
   });
