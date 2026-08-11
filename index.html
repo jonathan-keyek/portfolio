@@ -10,10 +10,6 @@
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
-<button id="pause-toggle" data-tooltip="Pause animations" aria-label="Pause animations" aria-pressed="false">
-  <svg class="icon-pause" width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="3.5" height="12" rx="1"/><rect x="5.5" y="0" width="3.5" height="12" rx="1"/></svg>
-  <svg class="icon-play"  width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M0 0 L10 6 L0 12 Z"/></svg>
-</button>
 <button id="theme-toggle" data-tooltip="Switch to dark mode" aria-label="Switch to dark mode" aria-pressed="false"></button>
 <div class="wrap">
   <main id="main-content">
@@ -38,53 +34,33 @@
     <h1 data-reveal>Jonathan Keyek</h1>
     <div class="role" data-reveal>Principal Product Designer</div>
     <div class="intro">
-      <p data-reveal>I design the experience — the patterns, the components, the stuff people actually touch — and then I build it in code so it ships as the real thing, not a picture of one. Eight years at Workday doing this for the AI and conversational patterns millions of people use at work, including the ambient agents that work quietly alongside you instead of yelling for attention.</p>
-      <p data-reveal>I got here the weird way: avant garde filmmaking, then computer science. Film taught me to describe ad curate a feeling that's undeniable. Code taught me to just build the thing when that's faster. Design still comes first — the rest is how I get it into people's hands without losing anything in translation.</p>
-      <p data-reveal>Mostly I design the system, not the screen. The numbers say it worked: tens of millions in contracts, millions more saved by killing bad ideas early. But honestly I'm happiest at the bezier curve and the command line, building it one piece at a time until it's whole.</p>
+      <p data-reveal>I get joy from watching someone use something I built and not even notice it's there. That's the goal every time: disappear the friction so people can do the thing that matters to them.</p>
+      <p data-reveal><span class="intro-em">I design for collaboration</span>, shaping how humans and AI work together so neither has to yell for the other's attention. <span class="intro-em">I design where it works</span>, meeting people in the moment they're stuck, not asking them to leave and find help somewhere else. And <span class="intro-em">I design in systems</span>, so what I build holds up at scale and ships fast whether it's a team picking it up internally or millions of users touching it in production.</p>
+      <p data-reveal>Eight years at Workday doing this for the AI experiences millions of people use at work. Got here sideways through filmmaking and computer science. Film taught me to build a feeling you can't argue with. Code taught me to just build the thing. Design still comes first.</p>
     </div>
   </header>
 
     <section>
-    <h2 data-reveal>Case Studies</h2>
-    <div class="cases">
-      <a class="case-link" aria-label="Embedding Ambient Agents across Work" href="work/ambient-agents.html" data-reveal><div class="case-card">
-        <div class="case-thumb-wrap case-thumb-agents">
-          <div class="case-thumb-blob-wrap" aria-hidden="true"><div class="case-thumb-blob"></div></div>
-          <img class="case-thumb-img" src="media/Agents-CaseStudyThubnail.png" alt="" aria-hidden="true">
+    <h2 data-reveal>What I'm Working On Right Now</h2>
+    <div class="wip-list">
+      <div class="wip-item" data-reveal>
+        <div class="wip-thumb">
+          <img src="media/WorkdayEverywhere-thubnail.png" alt="" aria-hidden="true">
         </div>
-        <div class="case-content">
-          <div class="case-title"><span class="case-title-inner">Embedding Ambient Agents across Work<span class="case-arrow">→</span></span></div>
-          <div class="case-sub">AI that works quietly alongside people inside the flow of their jobs — standardized across Salesforce, Google, and MS Teams.</div>
-          <div class="case-meta"><span>2025 — Workday</span></div>
+        <div class="wip-content">
+          <div class="wip-title">Workday Everywhere</div>
+          <p class="wip-body">Spreading Workday's agents into the tools people actually live in — collaboration spaces like Slack and Microsoft Teams, workspaces like Google Workspace and Claude Code — so the same agent, same behavior, surfaces the right action inside the conversation instead of an enterprise dashboard.</p>
         </div>
-      </div></a>
-      <a class="case-link" aria-label="Resolving Workday Maintenance Traps with Agentic Experiences" href="work/maintenance-traps.html" data-reveal><div class="case-card img-right">
-        <div class="case-thumb-wrap case-thumb-admin">
-          <div class="case-thumb-blob-wrap" aria-hidden="true"><div class="case-thumb-blob"></div></div>
-          <img class="case-thumb-img" src="media/Admin-CaseStudyThubnail.png" alt="" aria-hidden="true">
-        </div>
-        <div class="case-content">
-          <div class="case-title"><span class="case-title-inner">Resolving Workday Maintenance Traps with Agentic Experiences<span class="case-arrow">→</span></span></div>
-          <div class="case-sub">Broke a C-suite deadlock in 45 min. Funded 6 eng teams; Glass Box became the AI governance standard.</div>
-          <div class="case-meta"><span>2025 — Workday</span></div>
-        </div>
-      </div></a>
-      <a class="case-link" aria-label="Building Workday's first AI Design System" href="work/ai-design-system.html" data-reveal><div class="case-card">
-        <div class="case-thumb-wrap case-thumb-design">
-          <div class="case-thumb-blob-wrap" aria-hidden="true"><div class="case-thumb-blob"></div></div>
-          <img class="case-thumb-img" src="media/AIDesignSystem-CaseStudyThubnail.png" alt="" aria-hidden="true">
-        </div>
-        <div class="case-content">
-          <div class="case-title"><span class="case-title-inner">Building Workday's first AI Design System<span class="case-arrow">→</span></span></div>
-          <div class="case-sub">A 5-pattern taxonomy, 25+ teams aligned, 2,000× lower compute cost.</div>
-          <div class="case-meta"><span>2025 — Workday</span></div>
-        </div>
-      </div></a>
+      </div>
     </div>
   </section>
 
   <section>
     <h2 data-reveal>Shipped</h2>
+    <a class="rowlink" aria-label="Workday Everywhere" href="https://www.workday.com/en-us/products/platform-product-extensions/workday-everywhere.html" target="_blank"><div class="row linked" data-reveal>
+      <div class="row-left"><span class="item-title">Workday Everywhere</span><span class="item-sub">Developed the overall vision and strategy for how agents surface inside Teams, Gemini, Microsoft Copilot, and Google Workspace — partnering directly with each company to build within their frameworks, and with our Sana team to evolve the agents to work across surfaces.</span></div>
+      <div class="row-right">2026</div>
+    </div></a>
     <a class="rowlink" aria-label="Sana for Service Management" href="https://newsroom.workday.com/2026-05-21-Workday-Announces-Sana-for-IT-Service-Management-and-New-Travel-Agent" target="_blank"><div class="row linked" data-reveal>
       <div class="row-left"><span class="item-title">Sana for Service Management</span><span class="item-sub">Agentic IT support inside Workday — resolves access changes, software requests, and provisioning through natural language, triggered automatically as employees join, move, or leave. Lead designer.</span></div>
       <div class="row-right">2026</div>
@@ -97,11 +73,11 @@
       <div class="row-left"><span class="item-title">Little Words</span><span class="item-sub">Baby word-tracking app built for my own family. Auto-categorization, bulk add, multi-profile support. Rebuilt from React Native into native SwiftUI in a single session.</span><img src="logos/AppleAppStore.png" alt="Available on the App Store" height="32" class="app-store-badge"></div>
       <div class="row-right">2026</div>
     </div></a>
+    <div class="more-wrap" id="shipped-more"><div class="more-inner">
     <a class="rowlink" aria-label="Rising Keynotes (NA + EMEA)" href="https://www.youtube.com/watch?v=AOGEvLZA1so" target="_blank"><div class="row linked" data-reveal>
       <div class="row-left"><span class="item-title">Rising Keynotes (NA + EMEA)</span><span class="item-sub">Led all Tier 1 Rising keynote design narratives — the largest annual Workday customer conference. Innovation Summit ASOR Vision. Live on YouTube.</span></div>
       <div class="row-right">2025</div>
     </div></a>
-    <div class="more-wrap" id="shipped-more"><div class="more-inner">
     <a class="rowlink" aria-label="Workday Everywhere Agent Strategy" href="https://newsroom.workday.com/2025-09-16-Workday-Introduces-Workday-Data-Cloud-to-Unlock-the-Power-of-People-and-Money-Data-and-Accelerate-AI-Powered-Innovation" target="_blank"><div class="row linked" data-reveal>
       <div class="row-left"><span class="item-title">Workday Everywhere Agent Strategy</span><span class="item-sub">Architected Handshake Protocols standardizing agent behavior across Salesforce Agentforce, Google Agentspace, and MS Teams. Built a joint Rising showcase connecting data models across two companies.</span></div>
       <div class="row-right">2025</div>
@@ -204,6 +180,13 @@ function copyEmail(e) {
     var orig = el.textContent;
     el.textContent = 'Copied!';
     setTimeout(function(){ el.textContent = orig; }, 1800);
+  });
+}
+function copyWipEmail(btn) {
+  navigator.clipboard.writeText('jkfranssen@gmail.com').then(function() {
+    var orig = btn.textContent;
+    btn.textContent = 'Email Copied!';
+    setTimeout(function(){ btn.textContent = orig; }, 1800);
   });
 }
 </script>

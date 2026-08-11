@@ -67,4 +67,26 @@
       }
     });
   });
+
+  // Pin each .wip-thumb's height to its sibling .wip-content's rendered height,
+  // so the image box always hugs the text block exactly (width follows via aspect-ratio).
+  // Setting the thumb's height changes its width (via aspect-ratio), which changes
+  // how much space is left for the text column, which can reflow the text and change
+  // its height in turn — so this watches .wip-content itself and resyncs whenever its
+  // size actually changes, instead of guessing how many passes convergence needs.
+  document.querySelectorAll('.wip-item').forEach(function (item) {
+    var thumb = item.querySelector('.wip-thumb');
+    var content = item.querySelector('.wip-content');
+    if (!thumb || !content || typeof ResizeObserver === 'undefined') return;
+    var lastHeight = -1;
+    var ro = new ResizeObserver(function (entries) {
+      var h = entries[0].contentRect.height;
+      if (Math.abs(h - lastHeight) < 0.5) return;
+      lastHeight = h;
+      var cs = getComputedStyle(thumb);
+      var vPadding = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+      thumb.style.height = Math.max(0, content.offsetHeight - vPadding) + 'px';
+    });
+    ro.observe(content);
+  });
 })();
