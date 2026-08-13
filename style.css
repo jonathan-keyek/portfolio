@@ -61,7 +61,7 @@ a.plain { background: none; padding-bottom: 0; transition: opacity .15s; }
 a.plain:hover { opacity: .5; }
 
 h1 { font-size: clamp(3.4rem, 12vw, 4.2rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; }
-.role { color: var(--muted) !important; font-size: var(--text-base); margin-top: .3rem; margin-bottom: 2rem; }
+.role { color: var(--muted) !important; font-size: var(--text-base); margin-top: .3rem; margin-bottom: 2rem; padding-top: 8px; }
 
 section { margin-top: 3rem; }
 h2 {
@@ -253,7 +253,8 @@ details[data-closing] .dd-body { grid-template-rows: 0fr; }
 @media (max-width: 480px) {
   .row { flex-direction: column; gap: .1rem; }
   .row.contact-row { flex-direction: row; align-items: center; }
-  .row-right { font-size: var(--text-xs); }
+  .row-right { font-size: var(--text-xs); padding-top: 8px; }
+  .row.contact-row .row-right { padding-top: 0; }
   .cs-specs { gap: 1.1rem 1.6rem; }
 }
 
