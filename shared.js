@@ -76,11 +76,20 @@
     var thumb = item.querySelector('.wip-thumb');
     var content = item.querySelector('.wip-content');
     if (!thumb || !content || typeof ResizeObserver === 'undefined') return;
-    if (window.matchMedia('(max-width: 600px)').matches) return; // mobile stacks; no growth needed
+    var mobileQuery = window.matchMedia('(max-width: 600px)');
     var RATIO = 3414 / 2062;
     var PADDING = 24; // 12px top + 12px bottom (content-box)
     var lastContentH = -1;
     var ro = new ResizeObserver(function () {
+      // Re-checked on every fire (not just at setup) so an orientation change
+      // or window resize that crosses the breakpoint can't strand a stale
+      // inline px width fighting the mobile CSS's full-bleed 100% layout.
+      if (mobileQuery.matches) {
+        thumb.style.width = '';
+        thumb.style.maxWidth = '';
+        lastContentH = -1;
+        return;
+      }
       var contentH = content.offsetHeight;
       if (Math.abs(contentH - lastContentH) < 0.5) return;
       lastContentH = contentH;
