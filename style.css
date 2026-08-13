@@ -309,6 +309,9 @@ html.paused *, html.paused *::before, html.paused *::after {
   z-index: 200;
 }
 [data-tooltip]:hover::before { opacity: 1; }
+@media (hover: none) {
+  [data-tooltip]::before { content: none; }
+}
 
 /* ===== Pause toggle button ===== */
 #pause-toggle {
@@ -513,7 +516,7 @@ a.case-link:hover .case-meta { color: var(--ink) !important; }
   .case-thumb-wrap { aspect-ratio: 16/10; }
   .wip-item { flex-direction: column; align-items: stretch; }
   .wip-content { order: 1; padding-top: 0; }
-  .wip-thumb { order: 2; width: 100%; max-width: 280px; align-self: flex-start; }
+  .wip-thumb { order: 2; width: 100%; max-width: none; box-sizing: border-box; align-self: stretch; }
 }
 
 /* ===== Show more / less collapsible ===== */
