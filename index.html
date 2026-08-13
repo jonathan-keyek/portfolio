@@ -10,7 +10,10 @@
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
-<button id="theme-toggle" data-tooltip="Switch to dark mode" aria-label="Switch to dark mode" aria-pressed="false"></button>
+<div class="theme-toggle-row">
+  <button id="theme-toggle" class="switch" data-tooltip="Switch to dark mode" aria-label="Switch to dark mode" aria-pressed="false"></button>
+  <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</div>
 <div class="wrap">
   <main id="main-content">
   <header>
@@ -47,10 +50,13 @@
         <div class="wip-thumb">
           <img src="media/WorkdayEverywhere-thubnail.png" alt="" aria-hidden="true">
         </div>
-        <div class="wip-content">
+        <a class="wip-content" href="https://www.workday.com/en-us/products/platform-product-extensions/workday-everywhere.html" target="_blank" rel="noopener" aria-label="Workday Everywhere">
           <div class="wip-header">
             <div class="wip-title-row">
-              <div class="wip-title">Workday Everywhere</div>
+              <span class="wip-title-link">
+                <span class="wip-title">Workday Everywhere</span>
+                <svg class="ext-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+              </span>
               <div class="wip-apps">
                 <img src="logos/slack.png" alt="Slack" class="wip-app-badge">
                 <img src="logos/teams.png" alt="Microsoft Teams" class="wip-app-badge">
@@ -60,17 +66,13 @@
             </div>
           </div>
           <p class="wip-body">Spreading Workday's agents into the tools people actually live in — collaboration spaces like Slack and Microsoft Teams, workspaces like Google Workspace and Claude Code — so the same agent, same behavior, surfaces the right action inside the conversation instead of an enterprise dashboard.</p>
-        </div>
+        </a>
       </div>
     </div>
   </section>
 
   <section>
     <h2 data-reveal>Shipped</h2>
-    <a class="rowlink" aria-label="Workday Everywhere" href="https://www.workday.com/en-us/products/platform-product-extensions/workday-everywhere.html" target="_blank"><div class="row linked" data-reveal>
-      <div class="row-left"><span class="item-title">Workday Everywhere</span><span class="item-sub">Developed the overall vision and strategy for how agents surface inside Teams, Gemini, Microsoft Copilot, and Google Workspace — partnering directly with each company to build within their frameworks, and with our Sana team to evolve the agents to work across surfaces.</span></div>
-      <div class="row-right">2026</div>
-    </div></a>
     <a class="rowlink" aria-label="Sana for Service Management" href="https://newsroom.workday.com/2026-05-21-Workday-Announces-Sana-for-IT-Service-Management-and-New-Travel-Agent" target="_blank"><div class="row linked" data-reveal>
       <div class="row-left"><span class="item-title">Sana for Service Management</span><span class="item-sub">Agentic IT support inside Workday — resolves access changes, software requests, and provisioning through natural language, triggered automatically as employees join, move, or leave. Lead designer.</span></div>
       <div class="row-right">2026</div>
@@ -151,7 +153,7 @@
   <section>
     <h2 data-reveal>Experience</h2>
     <div class="row" data-reveal><div class="row-left"><span class="item-title">Principal Product Designer at <a href="https://www.workday.com" target="_blank">Workday</a></span><span class="item-sub">Ambient Agents, AI Systems, Event Keynotes, Experience Incubation</span></div><div class="row-right">2018 — Now</div></div>
-    <div class="row" data-reveal><div class="row-left"><span class="item-title">Founding Designer and Member of Technical Staff at <a href="https://toyo.ai/" target="_blank">Toyo</a></span><span class="item-sub">Experience Architecture, Product Design, Visual Design, Product Marketing</span></div><div class="row-right">2026 — Contract</div></div>
+    <div class="row" data-reveal><div class="row-left"><span class="item-title">Member of Technical Staff, Design at <a href="https://toyo.ai/" target="_blank">Toyo</a></span><span class="item-sub">Experience Architecture, Product Design, Visual Design, Product Marketing</span></div><div class="row-right">2026 — Contract</div></div>
     <div class="row" data-reveal><div class="row-left"><span class="item-title">Sr. Product Designer at <a href="https://www.astrazeneca.com" target="_blank">AstraZeneca</a></span><span class="item-sub">Consumer Health, Mobile, 0→1</span></div><div class="row-right">2022 — Contract</div></div>
     <div class="row" data-reveal><div class="row-left"><span class="item-title">Sr. Product Designer at <a href="https://www.acosta.com" target="_blank">Acosta</a></span><span class="item-sub">Experience Incubation, Rapid Prototyping, Business Intelligence Tooling, Design Sprint Facilitation</span></div><div class="row-right">2016 — 2017</div></div>
     <div class="row" data-reveal><div class="row-left"><span class="item-title">UX Design Lead at <a href="https://www.transamerica.com" target="_blank">Transamerica</a></span><span class="item-sub">Information Architecture, Public-Facing Websites, Design Systems</span></div><div class="row-right">2016</div></div>
@@ -167,7 +169,11 @@
   </section>
 
   </main>
-  <footer data-reveal>Built by Jonathan in the summer of 2026</footer>
+  <footer data-reveal>&copy; Jonathan Keyek — 2026</footer>
+</div>
+<div class="lightbox-overlay" id="lightbox-overlay">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+  <img id="lightbox-img" src="" alt="">
 </div>
 <script src="shared.js"></script>
 <script>

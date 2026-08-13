@@ -97,4 +97,33 @@
     });
     ro.observe(content);
   });
+
+  // WIP thumbnail lightbox
+  var overlay = document.getElementById('lightbox-overlay');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightboxClose = document.getElementById('lightbox-close');
+  if (overlay && lightboxImg) {
+    var openLightbox = function (src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || '';
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    var closeLightbox = function () {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+    document.querySelectorAll('.wip-thumb img').forEach(function (img) {
+      img.addEventListener('click', function () {
+        openLightbox(img.src, img.alt);
+      });
+    });
+    lightboxClose.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('open')) closeLightbox();
+    });
+  }
 })();
