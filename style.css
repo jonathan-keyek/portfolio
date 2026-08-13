@@ -334,23 +334,19 @@ html.paused #pause-toggle .icon-play  { display: block; }
 /* ===== Case study cards — full-width thumb, text below ===== */
 /* What I'm Working On */
 .wip-list { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem; }
-.wip-item { display: flex; gap: 1.5rem; align-items: flex-start; }
+.wip-item { display: flex; gap: 1.5rem; align-items: stretch; }
 .wip-thumb {
-  flex-shrink: 0; width: 50%; max-width: 256px;
-  border-radius: 14px; background: rgba(0,0,0,0.04); padding: 12px; box-sizing: content-box;
-  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 14px; background: rgba(0,0,0,0.04); padding: 12px; box-sizing: border-box;
+  display: inline-flex;
 }
-/* Intrinsic-ratio box via the classic padding-top percentage hack instead of
-   the `aspect-ratio` property + percentage-height child — iOS WebKit renders
-   that combination inconsistently and can collapse the top/bottom padding. */
-.wip-thumb-ratio { position: relative; width: 100%; padding-top: 60.398%; /* 2062 / 3414 */ }
-.wip-thumb-ratio img {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  display: block; border-radius: 4px; object-fit: cover;
+.wip-thumb img {
+  display: block; height: 200px; width: auto; max-width: 100%;
+  border-radius: 4px;
 }
 .wip-content {
-  flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1.5rem;
-  padding-top: 12px; padding-bottom: 0;
+  flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;
+  padding-top: 16px; padding-bottom: 16px;
   color: inherit; text-decoration: none; background-image: none;
 }
 .wip-title-row { display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; }
@@ -524,10 +520,8 @@ a.case-link:hover .case-meta { color: var(--ink) !important; }
   .case-thumb-wrap { aspect-ratio: 16/10; }
   .wip-item { flex-direction: column; align-items: stretch; }
   .wip-content { order: 1; padding-top: 0; }
-  /* content-box (same model as desktop) instead of border-box: iOS WebKit
-     renders aspect-ratio + border-box + percentage-sized flex children
-     inconsistently, letting the image overflow its own padding. */
-  .wip-thumb { order: 2; width: calc(100% - 24px); max-width: none; align-self: flex-start; }
+  .wip-thumb { order: 2; width: 100%; }
+  .wip-thumb img { height: auto; width: 100%; }
 }
 
 /* ===== Show more / less collapsible ===== */

@@ -68,45 +68,6 @@
     });
   });
 
-  // Grow .wip-thumb beyond its default max-width when the text column needs
-  // more vertical room than the image naturally provides, so there's always
-  // at least the CSS-defined gap between the icon row and the body text.
-  // (aspect-ratio: 3414 / 2062, box-sizing: content-box, 12px padding each side)
-  document.querySelectorAll('.wip-item').forEach(function (item) {
-    var thumb = item.querySelector('.wip-thumb');
-    var content = item.querySelector('.wip-content');
-    if (!thumb || !content || typeof ResizeObserver === 'undefined') return;
-    var mobileQuery = window.matchMedia('(max-width: 600px)');
-    var RATIO = 3414 / 2062;
-    var PADDING = 24; // 12px top + 12px bottom (content-box)
-    var lastContentH = -1;
-    var ro = new ResizeObserver(function () {
-      // Re-checked on every fire (not just at setup) so an orientation change
-      // or window resize that crosses the breakpoint can't strand a stale
-      // inline px width fighting the mobile CSS's full-bleed 100% layout.
-      if (mobileQuery.matches) {
-        thumb.style.width = '';
-        thumb.style.maxWidth = '';
-        lastContentH = -1;
-        return;
-      }
-      var contentH = content.offsetHeight;
-      if (Math.abs(contentH - lastContentH) < 0.5) return;
-      lastContentH = contentH;
-      // Always measure against the CSS-default (natural) size, not our own
-      // prior override, so this can't feed back on itself and oscillate.
-      thumb.style.width = '';
-      thumb.style.maxWidth = '';
-      var naturalH = thumb.getBoundingClientRect().height;
-      if (contentH > naturalH) {
-        var neededContentBoxW = (contentH - PADDING) * RATIO;
-        thumb.style.width = neededContentBoxW + 'px';
-        thumb.style.maxWidth = 'none';
-      }
-    });
-    ro.observe(content);
-  });
-
   // WIP thumbnail lightbox
   var overlay = document.getElementById('lightbox-overlay');
   var lightboxImg = document.getElementById('lightbox-img');
