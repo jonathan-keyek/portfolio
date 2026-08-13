@@ -516,7 +516,10 @@ a.case-link:hover .case-meta { color: var(--ink) !important; }
   .case-thumb-wrap { aspect-ratio: 16/10; }
   .wip-item { flex-direction: column; align-items: stretch; }
   .wip-content { order: 1; padding-top: 0; }
-  .wip-thumb { order: 2; width: 100%; max-width: none; box-sizing: border-box; align-self: stretch; }
+  /* content-box (same model as desktop) instead of border-box: iOS WebKit
+     renders aspect-ratio + border-box + percentage-sized flex children
+     inconsistently, letting the image overflow its own padding. */
+  .wip-thumb { order: 2; width: calc(100% - 24px); max-width: none; align-self: flex-start; }
 }
 
 /* ===== Show more / less collapsible ===== */
