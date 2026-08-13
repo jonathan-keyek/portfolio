@@ -8,6 +8,12 @@
 
   // Theme toggle
   var themeBtn = document.getElementById('theme-toggle');
+  var favicon = document.getElementById('favicon');
+  var updateFavicon = function (isDark) {
+    if (!favicon) return;
+    var base = favicon.getAttribute('href').replace(/jk-logo-(black|white)\.png$/, '');
+    favicon.setAttribute('href', base + (isDark ? 'jk-logo-white.png' : 'jk-logo-black.png'));
+  };
   if (themeBtn) {
     var saved = localStorage.getItem('theme');
     if (saved === 'dark') {
@@ -16,6 +22,7 @@
       themeBtn.setAttribute('aria-label', 'Switch to light mode');
       themeBtn.setAttribute('data-tooltip', 'Switch to light mode');
     }
+    updateFavicon(saved === 'dark');
     themeBtn.addEventListener('click', function () {
       var isDark = document.documentElement.classList.toggle('dark');
       var label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
@@ -23,6 +30,7 @@
       themeBtn.setAttribute('aria-label', label);
       themeBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
       themeBtn.setAttribute('data-tooltip', label);
+      updateFavicon(isDark);
     });
   }
 
