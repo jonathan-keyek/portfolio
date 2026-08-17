@@ -138,6 +138,8 @@ footer { margin-top: 3.5rem; color: var(--muted) !important; font-size: var(--te
   transition: transform .35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity .25s ease;
 }
 .flyout-dot img { width: 76%; height: 76%; object-fit: contain; }
+.flyout-dot img.logo-eagles { width: 90%; height: 90%; }
+.flyout-dot img.logo-family { width: 62%; height: 62%; }
 @media (hover: hover) and (pointer: fine) {
   .avatar-wrap:hover .flyout-dot { opacity: 1; transform: translate(-50%, -50%) scale(1); }
   .avatar-wrap:hover .flyout-dot:nth-child(1) { transform: translate(calc(-50% + 0px), calc(-50% - 78px)) scale(1); transition-delay: 0ms; }
