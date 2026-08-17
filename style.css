@@ -131,13 +131,14 @@ footer { margin-top: 3.5rem; color: var(--muted) !important; font-size: var(--te
   position: absolute; top: 50%; left: 50%;
   width: 40px; height: 40px; border-radius: 50%;
   background: var(--bg);
-  box-shadow: 0 4px 10px rgba(0,0,0,.18), 0 1px 3px rgba(0,0,0,.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.05);
   display: flex; align-items: center; justify-content: center;
   font-size: 18px; line-height: 1; overflow: hidden;
   opacity: 0; transform: translate(-50%, -50%) scale(.3);
   transition: transform .35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity .25s ease;
 }
 .flyout-dot.emoji-lg { font-size: 23px; }
+html.dark .flyout-dot { background: rgba(255,255,255,.08); }
 .flyout-dot img { width: 76%; height: 76%; object-fit: contain; }
 .flyout-dot img.logo-eagles { width: 90%; height: 90%; }
 .flyout-dot img.logo-family { width: 62%; height: 62%; }
