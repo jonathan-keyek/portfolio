@@ -142,7 +142,6 @@ html.dark .flyout-dot { background: rgba(255,255,255,.08); }
 .flyout-dot img { width: 76%; height: 76%; object-fit: contain; }
 .flyout-dot img.logo-eagles { width: 90%; height: 90%; }
 .flyout-dot img.logo-family { width: 62%; height: 62%; }
-/* Default: not enough room to the left for a ring, so fan out in a line to the right */
 @media (hover: hover) and (pointer: fine) {
   .avatar-wrap:hover .flyout-dot { opacity: 1; }
   .avatar-wrap:hover .flyout-dot:nth-child(1) { transform: translate(calc(-50% + 76px), -50%) scale(1); transition-delay: 0ms; }
@@ -152,17 +151,6 @@ html.dark .flyout-dot { background: rgba(255,255,255,.08); }
   .avatar-wrap:hover .flyout-dot:nth-child(5) { transform: translate(calc(-50% + 260px), -50%) scale(1); transition-delay: 140ms; }
   .avatar-wrap:hover .flyout-dot:nth-child(6) { transform: translate(calc(-50% + 306px), -50%) scale(1); transition-delay: 175ms; }
   .avatar-wrap:hover .flyout-dot:nth-child(7) { transform: translate(calc(-50% + 352px), -50%) scale(1); transition-delay: 210ms; }
-}
-/* Wide viewports (~200px+ of clearance to the left of the avatar): fan out in a ring instead */
-@media (hover: hover) and (pointer: fine) and (min-width: 1440px) {
-  .avatar-wrap:hover .flyout-dot { transform: translate(-50%, -50%) scale(1); }
-  .avatar-wrap:hover .flyout-dot:nth-child(1) { transform: translate(calc(-50% + 0px), calc(-50% - 78px)) scale(1); }
-  .avatar-wrap:hover .flyout-dot:nth-child(2) { transform: translate(calc(-50% + 61px), calc(-50% - 49px)) scale(1); }
-  .avatar-wrap:hover .flyout-dot:nth-child(3) { transform: translate(calc(-50% + 76px), calc(-50% + 17px)) scale(1); }
-  .avatar-wrap:hover .flyout-dot:nth-child(4) { transform: translate(calc(-50% + 34px), calc(-50% + 71px)) scale(1); }
-  .avatar-wrap:hover .flyout-dot:nth-child(5) { transform: translate(calc(-50% - 34px), calc(-50% + 71px)) scale(1); }
-  .avatar-wrap:hover .flyout-dot:nth-child(6) { transform: translate(calc(-50% - 76px), calc(-50% + 17px)) scale(1); }
-  .avatar-wrap:hover .flyout-dot:nth-child(7) { transform: translate(calc(-50% - 61px), calc(-50% - 49px)) scale(1); }
 }
 
 /* ===== Case study page — same restrained type as home ===== */
