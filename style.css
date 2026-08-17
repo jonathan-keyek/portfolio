@@ -125,28 +125,28 @@ footer { margin-top: 3.5rem; color: var(--muted) !important; font-size: var(--te
 
 /* Avatar */
 .avatar-wrap { position: relative; display: inline-block; }
-.avatar { width: 80px; height: 80px; display: block; margin-bottom: 1.6rem; }
-.avatar-flyout { position: absolute; top: 0; left: 0; width: 80px; height: 80px; pointer-events: none; }
+.avatar { position: relative; z-index: 1; width: 80px; height: 80px; display: block; margin-bottom: 1.6rem; }
+.avatar-flyout { position: absolute; top: 0; left: 0; width: 80px; height: 80px; z-index: 0; pointer-events: none; }
 .flyout-dot {
   position: absolute; top: 50%; left: 50%;
-  width: 32px; height: 32px; border-radius: 50%;
+  width: 40px; height: 40px; border-radius: 50%;
   background: var(--bg);
-  box-shadow: 0 4px 10px rgba(0,0,0,.18), 0 1px 3px rgba(0,0,0,.12), 0 0 0 1px var(--rule);
+  box-shadow: 0 4px 10px rgba(0,0,0,.18), 0 1px 3px rgba(0,0,0,.12);
   display: flex; align-items: center; justify-content: center;
-  font-size: 16px; line-height: 1; overflow: hidden;
+  font-size: 18px; line-height: 1; overflow: hidden;
   opacity: 0; transform: translate(-50%, -50%) scale(.3);
   transition: transform .35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity .25s ease;
 }
-.flyout-dot img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.flyout-dot img { width: 76%; height: 76%; object-fit: contain; }
 @media (hover: hover) and (pointer: fine) {
   .avatar-wrap:hover .flyout-dot { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  .avatar-wrap:hover .flyout-dot:nth-child(1) { transform: translate(calc(-50% + 0px), calc(-50% - 64px)) scale(1); transition-delay: 0ms; }
-  .avatar-wrap:hover .flyout-dot:nth-child(2) { transform: translate(calc(-50% + 50px), calc(-50% - 40px)) scale(1); transition-delay: 35ms; }
-  .avatar-wrap:hover .flyout-dot:nth-child(3) { transform: translate(calc(-50% + 62px), calc(-50% + 14px)) scale(1); transition-delay: 70ms; }
-  .avatar-wrap:hover .flyout-dot:nth-child(4) { transform: translate(calc(-50% + 28px), calc(-50% + 58px)) scale(1); transition-delay: 105ms; }
-  .avatar-wrap:hover .flyout-dot:nth-child(5) { transform: translate(calc(-50% - 28px), calc(-50% + 58px)) scale(1); transition-delay: 140ms; }
-  .avatar-wrap:hover .flyout-dot:nth-child(6) { transform: translate(calc(-50% - 62px), calc(-50% + 14px)) scale(1); transition-delay: 175ms; }
-  .avatar-wrap:hover .flyout-dot:nth-child(7) { transform: translate(calc(-50% - 50px), calc(-50% - 40px)) scale(1); transition-delay: 210ms; }
+  .avatar-wrap:hover .flyout-dot:nth-child(1) { transform: translate(calc(-50% + 0px), calc(-50% - 78px)) scale(1); transition-delay: 0ms; }
+  .avatar-wrap:hover .flyout-dot:nth-child(2) { transform: translate(calc(-50% + 61px), calc(-50% - 49px)) scale(1); transition-delay: 35ms; }
+  .avatar-wrap:hover .flyout-dot:nth-child(3) { transform: translate(calc(-50% + 76px), calc(-50% + 17px)) scale(1); transition-delay: 70ms; }
+  .avatar-wrap:hover .flyout-dot:nth-child(4) { transform: translate(calc(-50% + 34px), calc(-50% + 71px)) scale(1); transition-delay: 105ms; }
+  .avatar-wrap:hover .flyout-dot:nth-child(5) { transform: translate(calc(-50% - 34px), calc(-50% + 71px)) scale(1); transition-delay: 140ms; }
+  .avatar-wrap:hover .flyout-dot:nth-child(6) { transform: translate(calc(-50% - 76px), calc(-50% + 17px)) scale(1); transition-delay: 175ms; }
+  .avatar-wrap:hover .flyout-dot:nth-child(7) { transform: translate(calc(-50% - 61px), calc(-50% - 49px)) scale(1); transition-delay: 210ms; }
 }
 
 /* ===== Case study page — same restrained type as home ===== */
