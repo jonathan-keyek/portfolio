@@ -6,7 +6,8 @@ const root = __dirname;
 const mime = { html: 'text/html', css: 'text/css', js: 'text/javascript', png: 'image/png', jpg: 'image/jpeg', svg: 'image/svg+xml', ico: 'image/x-icon', json: 'application/json' };
 
 http.createServer((req, res) => {
-  let filePath = path.join(root, req.url === '/' ? 'index.html' : req.url);
+  const urlPath = decodeURIComponent(req.url.split('?')[0]);
+  let filePath = path.join(root, urlPath === '/' ? 'index.html' : urlPath);
   fs.readFile(filePath, (err, data) => {
     if (err) { res.writeHead(404); res.end('Not found'); return; }
     const ext = path.extname(filePath).slice(1);
