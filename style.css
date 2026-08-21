@@ -83,6 +83,8 @@ h2 {
 html.dark .contact-icon-light { display: none; }
 html.dark .contact-icon-dark { display: block; }
 .row-right { flex-shrink: 0; color: var(--muted) !important; font-size: var(--text-xs); white-space: nowrap; }
+.title-line { display: inline-flex; align-items: center; gap: 6px; }
+.company-logo { width: 20px; height: 20px; border-radius: 5px; object-fit: cover; flex-shrink: 0; opacity: .8; }
 .item-title { font-weight: 500; font-size: var(--text-md); color: var(--ink) !important; }
 .item-sub { color: var(--muted) !important; font-size: var(--text-sm); display: block; margin-top: .1rem; }
 .row.linked .row-left .item-title {
