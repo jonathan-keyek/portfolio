@@ -61,11 +61,11 @@ a.plain { background: none; padding-bottom: 0; transition: opacity .15s; }
 a.plain:hover { opacity: .5; }
 
 h1 { font-size: clamp(3.4rem, 12vw, 4.2rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; }
-.role { color: var(--muted) !important; font-size: var(--text-base); margin-top: .3rem; margin-bottom: 2rem; padding-top: 8px; }
+.role { color: var(--muted) !important; font-size: 1.1875rem; margin-top: .3rem; margin-bottom: 2rem; padding-top: 8px; }
 
 section { margin-top: 3rem; }
 h2 {
-  font-size: var(--text-2xs); font-weight: 500; letter-spacing: .02em;
+  font-size: var(--text-2xs); font-weight: 500; letter-spacing: .035em;
   color: var(--muted) !important; padding-bottom: .6rem; margin-bottom: 0; border-bottom: 1px solid var(--rule);
 }
 
@@ -78,6 +78,7 @@ h2 {
 .contact-label { display: inline-flex; align-items: center; gap: 8px; }
 .row.contact-row { align-items: center; }
 .row.contact-row .row-left { display: flex; align-items: center; }
+.contact-icon { color: var(--ink); flex-shrink: 0; }
 .contact-icon-dark { display: none; }
 html.dark .contact-icon-light { display: none; }
 html.dark .contact-icon-dark { display: block; }
@@ -122,7 +123,7 @@ a.rowlink { display: block; background: none; padding-bottom: 0; }
 .intro-em { color: var(--ink) !important; font-weight: 600; }
 html.dark .intro-em { color: #fff !important; }
 
-footer { margin-top: 3.5rem; color: var(--muted) !important; font-size: var(--text-2xs); font-weight: 500; letter-spacing: .02em; }
+footer { margin-top: 3.5rem; color: var(--muted) !important; font-size: var(--text-2xs); font-weight: 500; letter-spacing: .035em; }
 
 /* Avatar */
 .avatar-wrap { position: relative; display: inline-block; }
@@ -166,7 +167,7 @@ html.dark .flyout-dot { background: rgba(255,255,255,.08); }
 }
 .cs-back:hover { background-size: 100% 1px; color: var(--ink) !important; }
 footer .cs-back { margin-bottom: 0; }
-.cs-tag { font-size: var(--text-2xs); letter-spacing: .02em; color: var(--muted); margin-bottom: .9rem; }
+.cs-tag { font-size: var(--text-2xs); letter-spacing: .035em; color: var(--muted); margin-bottom: .9rem; }
 .cs-title { font-size: var(--text-display); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; }
 .cs-specs { display: flex; flex-wrap: wrap; gap: 1.6rem 2.5rem; margin-top: 1.6rem; padding-bottom: 1.6rem; }
 /* Case study hero — 80vw blob container, always in static hover state */
@@ -202,7 +203,7 @@ footer .cs-back { margin-bottom: 0; }
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12))
           drop-shadow(0 20px 48px rgba(0, 0, 0, 0.24));
 }
-.cs-spec-label { font-size: var(--text-2xs); letter-spacing: .02em; color: var(--muted); }
+.cs-spec-label { font-size: var(--text-2xs); letter-spacing: .035em; color: var(--muted); }
 .cs-spec-val { font-size: var(--text-sm); margin-top: .15rem; }
 
 /* Anchor metric — quiet, inline, no card or oversized color number */
@@ -224,7 +225,7 @@ footer .cs-back { margin-bottom: 0; }
 /* TL;DR — same row rhythm as home, no cards */
 .tldr { margin-top: .4rem; }
 .tldr-row { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
-.tldr-label { font-size: var(--text-2xs); letter-spacing: .02em; color: var(--muted); }
+.tldr-label { font-size: var(--text-2xs); letter-spacing: .035em; color: var(--muted); }
 .tldr-title { font-size: var(--text-md); font-weight: 600; margin: .25rem 0 .4rem; }
 .tldr-body { font-size: var(--text-sm); color: var(--ink-soft) !important; line-height: 1.55; max-width: none; }
 .tldr-body p + p { margin-top: .7rem; }
@@ -331,6 +332,7 @@ html.paused *, html.paused *::before, html.paused *::after {
   background: rgba(0,0,0,.82);
   color: #fff !important;
   font-size: var(--text-2xs);
+  letter-spacing: .035em;
   font-family: -apple-system, "SF Pro Text", Helvetica, sans-serif;
   font-weight: 400;
   line-height: 1.4;
