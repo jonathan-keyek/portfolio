@@ -93,17 +93,6 @@ h2 {
   transition: background-size .35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-rowlink:hover .row-right { background-size: 100% 1px, 100% 1px; }
-.contact-value-icon {
-  display: inline-flex; align-items: center; justify-content: center;
-  flex-shrink: 0; overflow: hidden;
-  color: inherit;
-  width: 0; margin-left: 0; opacity: 0;
-  transform: translateX(-6px);
-  transition: width .3s cubic-bezier(0.4, 0, 0.2, 1), margin-left .3s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity .2s ease, transform .3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.contact-value-icon svg { width: 15px; height: 15px; flex-shrink: 0; }
-.contact-rowlink:hover .contact-value-icon { width: 15px; margin-left: 6px; opacity: 1; transform: translateX(0); }
 .contact-icon-dark { display: none; }
 html.dark .contact-icon-light { display: none; }
 html.dark .contact-icon-dark { display: block; }
