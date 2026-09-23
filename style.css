@@ -310,8 +310,31 @@ details[data-closing] .dd-body { grid-template-rows: 0fr; }
 }
 
 /* Cascade reveal */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); filter: blur(8px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
-.reveal { opacity: 0; animation: fadeUp 600ms cubic-bezier(0.22,1,0.36,1) forwards; }
+/* Movement and refraction run as two animations so the glass effect can
+   outlast the (front-loaded) rise: the blur clears and a red/blue split
+   collapses gradually while the text is still settling. Native filter
+   functions only, so it stays on the GPU. */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes refractIn {
+  0%   { filter: blur(8px) drop-shadow(-8px 0 0 rgb(255 40 90 / .55)) drop-shadow(8px 0 0 rgb(40 120 255 / .55)); }
+  45%  { filter: blur(3px) drop-shadow(-4px 0 0 rgb(255 40 90 / .32)) drop-shadow(4px 0 0 rgb(40 120 255 / .32)); }
+  100% { filter: none; }
+}
+.reveal {
+  opacity: 0;
+  /* "both": the first keyframe (transparent, blurred, split) holds through the
+     stagger delay, so text can never show plain before its animation starts */
+  animation: fadeUp 560ms cubic-bezier(0.22,1,0.36,1) both,
+             refractIn 800ms cubic-bezier(0.3,0,0.3,1) both;
+}
+.reveal.reveal-lite { animation: fadeUp 400ms cubic-bezier(0.22,1,0.36,1) both; }
+/* Contact dividers sit on the wrapping link: hidden until their row reveals */
+html.js .contact-rowlink:not(.reveal-border) { border-bottom-color: transparent; }
+.contact-rowlink.reveal-border { animation: borderIn 500ms ease-out both; }
+@keyframes borderIn { from { border-bottom-color: transparent; } }
 html.js [data-reveal] { opacity: 0; }
 
 /* ===== Thumbnail GIF animations ===== */
@@ -692,6 +715,51 @@ html.dark .switch[aria-pressed="true"] { background: #3b82f6; }
 .switch[aria-pressed="true"]::after { transform: translateX(16px); background: #fff; }
 html.dark .switch::after { background: #999; }
 html.dark .switch[aria-pressed="true"]::after { background: #fff; }
+
+/* Browser backing color — toggled by JS separately from .dark so the
+   theme sweep can switch it mid-way (see shared.js). */
+html.scheme-dark { color-scheme: dark; }
+/* Scroll is locked for the length of the theme sweep (snapshots don't scroll). */
+html.vt-lock { overflow: hidden; scrollbar-gutter: stable; }
+
+/* Theme switch: a ripple from the toggle, eased in and out (gentle start and
+   finish, near-constant through the middle). The new theme
+   is revealed behind a feathered edge, and as the edge reaches each block of
+   content it replays the load-in's refraction (refractIn, applied from
+   shared.js), so the switch and the page load look the same. Native filters
+   and gradient masks only, so it stays on the GPU's fast path. SWEEP_TAIL in
+   shared.js is the extra travel (320px) past the far corner. */
+@property --vt-r {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-new(root) {
+  -webkit-mask-image: radial-gradient(circle at var(--vt-x) var(--vt-y),
+    #000 max(0px, calc(var(--vt-r) - 170px)), transparent calc(var(--vt-r) - 10px));
+  mask-image: radial-gradient(circle at var(--vt-x) var(--vt-y),
+    #000 max(0px, calc(var(--vt-r) - 170px)), transparent calc(var(--vt-r) - 10px));
+  animation: vt-sweep var(--vt-dur, 900ms) cubic-bezier(.3, 0, .7, 1) both;
+}
+/* During the switch each block refracts on its own compositor layer, so the
+   blur/split animates on the GPU instead of repainting the page per frame. */
+html.vt-lock [data-reveal] { will-change: filter; }
+/* Held for a frame or two before the ripple starts so the new theme gets
+   rasterized up front (see shared.js); 1% is imperceptible. */
+html.vt-prime::view-transition-new(root) {
+  -webkit-mask-image: none;
+  mask-image: none;
+  opacity: .01;
+}
+@keyframes vt-sweep {
+  from { --vt-r: 0px; }
+  to   { --vt-r: calc(var(--vt-r-end) + 320px); }
+}
 
 /* ── A11Y: focus styles ── */
 :focus-visible {
