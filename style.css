@@ -160,7 +160,6 @@ footer { margin-top: 3.5rem; color: var(--muted) !important; font-size: var(--te
 }
 .flyout-dot.emoji-lg { font-size: 23px; }
 .flyout-dot img { width: 76%; height: 76%; object-fit: contain; }
-.flyout-dot img.logo-eagles { width: 90%; height: 90%; }
 .flyout-dot img.logo-family { width: 62%; height: 62%; }
 @media (hover: hover) and (pointer: fine) {
   .avatar-wrap:hover .flyout-dot { opacity: 1; }
@@ -170,7 +169,6 @@ footer { margin-top: 3.5rem; color: var(--muted) !important; font-size: var(--te
   .avatar-wrap:hover .flyout-dot:nth-child(4) { transform: translate(calc(-50% + 214px), -50%) scale(1); transition-delay: 105ms; }
   .avatar-wrap:hover .flyout-dot:nth-child(5) { transform: translate(calc(-50% + 260px), -50%) scale(1); transition-delay: 140ms; }
   .avatar-wrap:hover .flyout-dot:nth-child(6) { transform: translate(calc(-50% + 306px), -50%) scale(1); transition-delay: 175ms; }
-  .avatar-wrap:hover .flyout-dot:nth-child(7) { transform: translate(calc(-50% + 352px), -50%) scale(1); transition-delay: 210ms; }
 }
 
 /* ===== Case study page — same restrained type as home ===== */
@@ -185,6 +183,9 @@ footer { margin-top: 3.5rem; color: var(--muted) !important; font-size: var(--te
 }
 .cs-back:hover { background-size: 100% 1px; color: var(--ink) !important; }
 footer .cs-back { margin-bottom: 0; }
+footer:has(.footer-logo) { display: flex; align-items: center; gap: 8px; }
+.footer-logo { width: 20px; height: 20px; margin: 0 4px 0 2px; border-radius: 5px; flex-shrink: 0; } /* centered in a 24px slot, like the contact icons */
+html.dark .footer-logo { filter: invert(1); }
 .cs-tag { font-size: var(--text-2xs); letter-spacing: .035em; color: var(--muted); margin-bottom: .9rem; }
 .cs-title { font-size: var(--text-display); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; }
 .cs-specs { display: flex; flex-wrap: wrap; gap: 1.6rem 2.5rem; margin-top: 1.6rem; padding-bottom: 1.6rem; }
