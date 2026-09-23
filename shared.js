@@ -77,6 +77,9 @@
   var refractOnSweep = function (x, y, total, dur) {
     var started = [];
     els.forEach(function (el) {
+      // The photo sits outside the switch (always visible, never masked), so
+      // it uses a variant that stays sharp through its delay and ramps in.
+      var isAvatar = el.classList.contains('avatar-wrap');
       var b = el.getBoundingClientRect();
       if (b.bottom < 0 || b.top > innerHeight || !b.width) return;
       var cx = Math.max(b.left, Math.min(x, b.right));
@@ -85,9 +88,20 @@
       var delay = Math.round(dur * sweepTimeAt((Math.hypot(x - cx, y - cy) + 90) / total));
       el.style.animation = 'none';
       void el.offsetWidth; // restart even if it ran last switch
-      el.style.animation = 'fadeUp 1ms both, refractIn 800ms cubic-bezier(0.3,0,0.3,1) ' +
-        delay + 'ms both';
-      started = started.concat(el.getAnimations());
+      // (Its blur ramps up over the first 10%, so start it a touch early to
+      // peak as the edge arrives.)
+      if (isAvatar) delay = Math.max(0, delay - 60);
+      // fadeUp only restores the load-in's end state (visible, in place);
+      // the -1ms delay starts it already finished, so no frame ever renders
+      // its opacity-0 / 14px-down first keyframe.
+      el.style.animation = 'fadeUp 1ms -1ms both, ' + (isAvatar ? 'refractInAvatar' : 'refractIn') +
+        ' 800ms cubic-bezier(0.3,0,0.3,1) ' + delay + 'ms both';
+      // The avatar is on screen during the hold (nothing masks it), so its
+      // 1ms fadeUp must run, not sit paused at opacity 0 (it'd vanish, then
+      // pop back). Only its refraction is held with the rest.
+      started = started.concat(el.getAnimations().filter(function (a) {
+        return !isAvatar || a.animationName === 'refractInAvatar';
+      }));
     });
     return started;
   };

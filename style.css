@@ -323,6 +323,16 @@ details[data-closing] .dd-body { grid-template-rows: 0fr; }
   45%  { filter: blur(3px) drop-shadow(-4px 0 0 rgb(255 40 90 / .32)) drop-shadow(4px 0 0 rgb(40 120 255 / .32)); }
   100% { filter: none; }
 }
+/* Same refraction for the avatar during the theme switch. It's lifted out of
+   the ripple so its morph keeps running, which means it's visible before the
+   ripple arrives: start sharp and ramp into the blur over the first ~10%
+   instead of holding it blurred. Keep the tail in step with refractIn. */
+@keyframes refractInAvatar {
+  0%   { filter: none; }
+  10%  { filter: blur(8px) drop-shadow(-8px 0 0 rgb(255 40 90 / .55)) drop-shadow(8px 0 0 rgb(40 120 255 / .55)); }
+  45%  { filter: blur(3px) drop-shadow(-4px 0 0 rgb(255 40 90 / .32)) drop-shadow(4px 0 0 rgb(40 120 255 / .32)); }
+  100% { filter: none; }
+}
 .reveal {
   opacity: 0;
   /* "both": the first keyframe (transparent, blurred, split) holds through the
@@ -746,6 +756,12 @@ html.vt-lock { overflow: hidden; scrollbar-gutter: stable; }
     #000 max(0px, calc(var(--vt-r) - 170px)), transparent calc(var(--vt-r) - 10px));
   animation: vt-sweep var(--vt-dur, 900ms) cubic-bezier(.3, 0, .7, 1) both;
 }
+/* The profile photo looks the same in both themes, so it's lifted out of the
+   switch: only its live layer shows, in place, so its morph never freezes. */
+html.vt-lock .avatar-wrap { view-transition-name: avatar; }
+::view-transition-old(avatar) { display: none; }
+::view-transition-group(avatar),
+::view-transition-new(avatar) { animation: none; }
 /* During the switch each block refracts on its own compositor layer, so the
    blur/split animates on the GPU instead of repainting the page per frame. */
 html.vt-lock [data-reveal] { will-change: filter; }
