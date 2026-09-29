@@ -734,7 +734,7 @@ html.scheme-dark { color-scheme: dark; }
 html.vt-lock { overflow: hidden; scrollbar-gutter: stable; }
 
 /* Theme switch: a ripple from the toggle, eased in and out (gentle start and
-   finish, near-constant through the middle). The new theme
+   finish, a smooth, decisive middle). The new theme
    is revealed behind a feathered edge, and as the edge reaches each block of
    content it replays the load-in's refraction (refractIn, applied from
    shared.js), so the switch and the page load look the same. Native filters
@@ -755,7 +755,7 @@ html.vt-lock { overflow: hidden; scrollbar-gutter: stable; }
     #000 max(0px, calc(var(--vt-r) - 170px)), transparent calc(var(--vt-r) - 10px));
   mask-image: radial-gradient(circle at var(--vt-x) var(--vt-y),
     #000 max(0px, calc(var(--vt-r) - 170px)), transparent calc(var(--vt-r) - 10px));
-  animation: vt-sweep var(--vt-dur, 900ms) cubic-bezier(.3, 0, .7, 1) both;
+  animation: vt-sweep var(--vt-dur, 900ms) cubic-bezier(.65, 0, .35, 1) both;
 }
 /* The profile photo looks the same in both themes, so it's lifted out of the
    switch: only its live layer shows, in place, so its morph never freezes. */

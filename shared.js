@@ -34,8 +34,8 @@
     if (schemeMeta) schemeMeta.setAttribute('content', isDark ? 'dark' : 'light');
   };
   // Sweep speed in px/ms (average): bigger screens just take longer.
-  var SWEEP_SPEED = 2;
-  // The sweep's easing, cubic-bezier(.3, 0, .7, 1) — must match the CSS.
+  var SWEEP_SPEED = 2.5;
+  // The sweep's easing, cubic-bezier(.65, 0, .35, 1) — must match the CSS.
   // Given how far along the edge is (0..1), returns how far along in time
   // it gets there, so content can refract exactly as the edge arrives.
   var sweepTimeAt = function (p) {
@@ -46,8 +46,8 @@
       u = (lo + hi) / 2;
       if (3 * u * u - 2 * u * u * u < p) lo = u; else hi = u;
     }
-    var m = 1 - u;                          // x(u) with x1=.3, x2=.7
-    return 3 * m * m * u * .3 + 3 * m * u * u * .7 + u * u * u;
+    var m = 1 - u;                          // x(u) with x1=.65, x2=.35
+    return 3 * m * m * u * .65 + 3 * m * u * u * .35 + u * u * u;
   };
   var SWEEP_TAIL = 320; // must match the band depth used in the CSS masks
 
