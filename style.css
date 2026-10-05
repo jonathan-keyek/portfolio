@@ -4,6 +4,7 @@
   --bg: #f3f3f3;
   --ink: #000000;
   --ink-soft: #333333;
+  --section-gap: 3.25rem;
   --muted: #616161;
   --rule: #d8d8d8;
   --link-ul: #d8d8d8;
@@ -60,12 +61,12 @@ a:hover { background-size: 100% 1px, 100% 1px; }
 a.plain { background: none; padding-bottom: 0; transition: opacity .15s; }
 a.plain:hover { opacity: .5; }
 
-h1 { font-size: clamp(3.4rem, 12vw, 4.2rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; }
-.role { color: var(--muted) !important; font-size: 1.1875rem; margin-top: .3rem; margin-bottom: 2rem; padding-top: 8px; }
+h1 { font-size: clamp(2.8rem, 10vw, 3.4rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; }
+.role { color: var(--muted) !important; font-size: var(--text-xs); font-weight: 500; letter-spacing: .01em; line-height: 1.4; margin-top: .2rem; }
 
-section { margin-top: 3rem; }
+section { margin-top: var(--section-gap); }
 h2 {
-  font-size: var(--text-2xs); font-weight: 500; letter-spacing: .035em;
+  font-size: var(--text-xs); font-weight: 500; letter-spacing: .01em; line-height: 1.4;
   color: var(--muted) !important; padding-bottom: .6rem; margin-bottom: 0; border-bottom: 1px solid var(--rule);
 }
 
@@ -144,11 +145,13 @@ a.rowlink { display: block; background: none; padding-bottom: 0; }
 .intro-em { color: var(--ink) !important; font-weight: 600; }
 html.dark .intro-em { color: #fff !important; }
 
-footer { margin-top: 3.5rem; color: var(--muted) !important; font-size: var(--text-2xs); font-weight: 500; letter-spacing: .035em; }
+footer { margin-top: 3.5rem; color: var(--muted) !important; font-size: var(--text-xs); font-weight: 500; letter-spacing: .01em; line-height: 1.4; }
 
 /* Avatar */
 .avatar-wrap { position: relative; display: inline-block; }
-.avatar { position: relative; z-index: 1; width: 80px; height: 80px; display: block; margin-bottom: 1.6rem; }
+.identity { display: flex; flex-direction: column; align-items: flex-start; gap: var(--section-gap); margin-bottom: 2rem; }
+.identity-text { min-width: 0; }
+.avatar { position: relative; z-index: 1; width: 80px; height: 80px; display: block; }
 .avatar-flyout { position: absolute; top: 0; left: 0; width: 80px; height: 80px; z-index: 0; pointer-events: none; }
 .flyout-dot {
   position: absolute; top: 50%; left: 50%;
@@ -186,7 +189,7 @@ footer .cs-back { margin-bottom: 0; }
 footer:has(.footer-logo) { display: flex; align-items: center; gap: 8px; }
 .footer-logo { width: 20px; height: 20px; margin: 0 4px 0 2px; border-radius: 5px; flex-shrink: 0; } /* centered in a 24px slot, like the contact icons */
 html.dark .footer-logo { filter: invert(1); }
-.cs-tag { font-size: var(--text-2xs); letter-spacing: .035em; color: var(--muted); margin-bottom: .9rem; }
+.cs-tag { font-size: var(--text-xs); font-weight: 500; letter-spacing: .01em; line-height: 1.4; color: var(--muted); margin-bottom: .9rem; }
 .cs-title { font-size: var(--text-display); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; }
 .cs-specs { display: flex; flex-wrap: wrap; gap: 1.6rem 2.5rem; margin-top: 1.6rem; padding-bottom: 1.6rem; }
 /* Case study hero — 80vw blob container, always in static hover state */
@@ -222,7 +225,7 @@ html.dark .footer-logo { filter: invert(1); }
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12))
           drop-shadow(0 20px 48px rgba(0, 0, 0, 0.24));
 }
-.cs-spec-label { font-size: var(--text-2xs); letter-spacing: .035em; color: var(--muted); }
+.cs-spec-label { font-size: var(--text-xs); font-weight: 500; letter-spacing: .01em; line-height: 1.4; color: var(--muted); }
 .cs-spec-val { font-size: var(--text-sm); margin-top: .15rem; }
 
 /* Anchor metric — quiet, inline, no card or oversized color number */

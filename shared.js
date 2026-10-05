@@ -95,7 +95,7 @@
       // the -1ms delay starts it already finished, so no frame ever renders
       // its opacity-0 / 14px-down first keyframe.
       el.style.animation = 'fadeUp 1ms -1ms both, ' + (isAvatar ? 'refractInAvatar' : 'refractIn') +
-        ' 800ms cubic-bezier(0.3,0,0.3,1) ' + delay + 'ms both';
+        ' 800ms linear ' + delay + 'ms both';
       // The avatar is on screen during the hold (nothing masks it), so its
       // 1ms fadeUp must run, not sit paused at opacity 0 (it'd vanish, then
       // pop back). Only its refraction is held with the rest.
