@@ -705,14 +705,17 @@ html.dark .cs-tag { color: #888; }
 /* Theme toggle */
 .theme-toggle-row {
   position: fixed;
-  top: clamp(1rem, 4vw, 1.8rem);
-  right: clamp(1rem, 4vw, 1.8rem);
+  /* 12px padding makes the whole row a ~44px-tall tap target (see shared.js) */
+  top: calc(clamp(1rem, 4vw, 1.8rem) - 12px);
+  right: calc(clamp(1rem, 4vw, 1.8rem) - 12px);
+  padding: 12px;
   z-index: 100;
   display: flex;
   align-items: center;
   gap: .55rem;
+  cursor: pointer;
 }
-.toggle-icon { width: 20px; height: 20px; flex: none; color: var(--ink); cursor: pointer; }
+.toggle-icon { width: 20px; height: 20px; flex: none; color: var(--ink); cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 html.dark .toggle-icon { color: #e8e8e8; }
 .switch {
   width: 36px; height: 20px;
@@ -725,6 +728,7 @@ html.dark .toggle-icon { color: #e8e8e8; }
   display: flex; align-items: center;
   flex: none;
   forced-color-adjust: none;
+  -webkit-tap-highlight-color: transparent; touch-action: manipulation;
 }
 /* "On" should read as obviously on: dark/solid against light mode's pale
    track, and a bright accent against dark mode's dim track. */

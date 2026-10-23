@@ -25,8 +25,11 @@
 
   // Theme toggle
   var themeBtn = document.getElementById('theme-toggle');
-  var themeIcon = document.querySelector('.toggle-icon');
-  if (themeBtn && themeIcon) themeIcon.addEventListener('click', function () { themeBtn.click(); });
+  var themeRow = document.querySelector('.theme-toggle-row');
+  // Tapping anywhere on the row (icon, padding) flips the theme, not just the switch.
+  if (themeBtn && themeRow) themeRow.addEventListener('click', function (e) {
+    if (e.target !== themeBtn) themeBtn.click();
+  });
   // The browser's own backing color (from color-scheme) peeks through at the
   // window's rounded edges, so it must match whatever theme is at the edge.
   // It's driven separately from .dark so the sweep can flip it mid-way.
