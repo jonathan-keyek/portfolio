@@ -25,6 +25,8 @@
 
   // Theme toggle
   var themeBtn = document.getElementById('theme-toggle');
+  var themeIcon = document.querySelector('.toggle-icon');
+  if (themeBtn && themeIcon) themeIcon.addEventListener('click', function () { themeBtn.click(); });
   // The browser's own backing color (from color-scheme) peeks through at the
   // window's rounded edges, so it must match whatever theme is at the edge.
   // It's driven separately from .dark so the sweep can flip it mid-way.

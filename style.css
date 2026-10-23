@@ -712,7 +712,7 @@ html.dark .cs-tag { color: #888; }
   align-items: center;
   gap: .55rem;
 }
-.toggle-icon { width: 20px; height: 20px; flex: none; color: var(--ink); }
+.toggle-icon { width: 20px; height: 20px; flex: none; color: var(--ink); cursor: pointer; }
 html.dark .toggle-icon { color: #e8e8e8; }
 .switch {
   width: 36px; height: 20px;
