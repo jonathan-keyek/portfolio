@@ -72,7 +72,7 @@ h2 {
 
 /* List rows */
 .row { display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem; padding: .7rem 0; border-bottom: 1px solid var(--rule); }
-.row:not(.linked):last-child { border-bottom: none; }
+.row:not(.linked):not(.exp-row):last-child { border-bottom: none; }
 .more-inner .rowlink:last-child .row { border-bottom: none; }
 .rowlink:has(+ .more-wrap:not(.open)) .row { border-bottom: none; }
 .row-left { flex: 1; min-width: 0; }
@@ -125,6 +125,16 @@ html.dark .contact-icon-dark { display: block; }
 }
 .row.linked:hover .row-left .item-title::after { opacity: 1; transform: translateX(0); }
 a.rowlink { display: block; background: none; padding-bottom: 0; }
+.company-name {
+  background-image: linear-gradient(currentColor, currentColor), linear-gradient(var(--link-ul), var(--link-ul));
+  background-size: 0% 1px, 100% 1px;
+  background-position: left bottom, left bottom;
+  background-repeat: no-repeat, no-repeat;
+  padding-bottom: 1px;
+  transition: background-size .35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.exp-rowlink:hover .company-name { background-size: 100% 1px, 100% 1px; }
+.exp-rowlink:last-child .row { border-bottom: none; }
 
 /* Stack chips */
 .stack { display: flex; flex-wrap: wrap; gap: .4rem; padding-top: .85rem; }
